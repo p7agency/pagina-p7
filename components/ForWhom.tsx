@@ -1,61 +1,33 @@
-
 import React from 'react';
 
 const ForWhom: React.FC = () => {
   const items = [
     {
       code: "01",
-      title: "Valor Invisível",
-      problem: "Tem um serviço de elite, mas o digital parece amador.",
-      solution: "Alinhamos sua imagem à qualidade real da sua entrega."
+      title: "Estratégia",
+      desc: "Entender onde você quer chegar e organizar cada ação para que faça sentido dentro de um objetivo maior."
     },
     {
       code: "02",
-      title: "Diferenciação",
-      problem: "Cansado de ser comparado por preço e não por valor.",
-      solution: "Construímos uma autoridade que torna a comparação impossível."
+      title: "Humanização",
+      desc: "Sair da comunicação fria e se posicionar de forma que as pessoas reconheçam verdade no que você diz. Quando existe identificação, a venda deixa de ser esforço e passa a ser consequência."
     },
     {
       code: "03",
-      title: "Escala com Direção",
-      problem: "Está crescendo, mas sente que falta um método sólido.",
-      solution: "Aceleramos seu posicionamento com estratégia de grandes experts."
-    },
-    {
-      code: "04",
-      title: "Legado Digital",
-      problem: "Já tem resultados, mas sua presença digital é obsoleta.",
-      solution: "Criamos um ecossistema à altura do seu faturamento e história."
-    },
-    {
-      code: "05",
-      title: "Tailor Made",
-      problem: "Fórmulas genéricas não funcionam para o seu negócio.",
-      solution: "Estratégia artesanal pensada exclusivamente para o seu nicho."
-    },
-    {
-      code: "06",
-      title: "Liderança de Nicho",
-      problem: "Quer ser a primeira opção na mente do seu cliente.",
-      solution: "Posicionamento dominante através de clareza e estética de elite."
+      title: "Autenticidade",
+      desc: "Comunicar sem distorcer quem você é para agradar ou seguir padrão. É isso que diferencia, gera autoridade e constrói confiança no longo prazo."
     }
   ];
 
   return (
     <section className="py-40 px-6 md:px-16 bg-white text-black border-b border-black/10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-32 gap-8">
+        <div className="flex flex-col justify-between items-start mb-32 gap-8">
           <div className="space-y-4">
-            <p className="text-[10px] uppercase font-bold text-black/40 tracking-[0.5em]">Target Audience</p>
             <h2 className="text-7xl md:text-9xl font-condensed uppercase leading-[0.8] mb-4">
-              Público<br />de Elite
+              Como<br />Fazemos
             </h2>
             <div className="h-1 w-24 bg-black"></div>
-          </div>
-          <div className="max-w-sm">
-            <p className="text-sm font-medium uppercase tracking-widest leading-relaxed opacity-60">
-              A P7 não é para todos. É para quem entende que o digital é o palco principal do seu negócio.
-            </p>
           </div>
         </div>
 
@@ -76,19 +48,9 @@ const ForWhom: React.FC = () => {
                 </h4>
                 
                 <div className="space-y-6">
-                  <div className="opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-                    <p className="text-[10px] uppercase font-bold tracking-widest group-hover:text-white/40 mb-2">Cenário Atual</p>
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity duration-500">
                     <p className="text-sm font-medium leading-relaxed group-hover:text-white">
-                      {item.problem}
-                    </p>
-                  </div>
-                  
-                  <div className="h-px w-0 group-hover:w-full bg-white/20 transition-all duration-700"></div>
-                  
-                  <div className="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                    <p className="text-[10px] uppercase font-bold tracking-widest text-white/40 mb-2">Solução P7</p>
-                    <p className="text-sm italic text-white leading-relaxed">
-                      {item.solution}
+                      {item.desc}
                     </p>
                   </div>
                 </div>

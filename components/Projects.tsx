@@ -18,42 +18,34 @@ const Projects: React.FC = () => {
           </div>
         </div>
         
-        <div className="flex flex-col">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {CLIENTS.map((client) => (
             <a 
               key={client.id} 
               href={client.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block relative border-b border-white/10 py-8 md:py-16 cursor-pointer transition-all duration-700 md:hover:px-12"
+              className="group relative border border-white/10 aspect-square p-8 md:p-12 flex flex-col justify-between hover:bg-white cursor-pointer transition-colors duration-700 overflow-hidden text-white hover:text-black"
             >
-              {/* Overlay Background on Hover - Only Desktop */}
-              <div className="absolute inset-0 bg-white translate-x-full md:group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"></div>
-              
-              <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8">
-                <div className="flex items-center gap-6 md:gap-16 md:flex-1">
-                  <span className="text-xl md:text-4xl font-condensed opacity-20 md:group-hover:opacity-100 md:group-hover:text-black transition-all duration-500 min-w-[2.5rem] md:min-w-[3rem]">
-                    {client.id}
-                  </span>
-                  <h3 className="text-3xl md:text-6xl lg:text-7xl font-condensed uppercase tracking-tighter md:group-hover:text-black transition-colors duration-500 lg:max-w-[400px] leading-[0.85]">
-                    {client.name}
-                  </h3>
+              <div className="flex justify-between items-start">
+                <span className="text-sm font-mono opacity-30 group-hover:opacity-100 transition-opacity">
+                  {client.id}
+                </span>
+                <div className="w-10 h-10 rounded-full border border-current flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-50 group-hover:scale-100">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
                 </div>
+              </div>
 
-                {/* Descrição sempre visível no mobile, ou com hover no desktop */}
-                <div className="md:flex-1 opacity-60 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 delay-150">
-                  <p className="text-sm md:text-base md:text-black font-medium leading-relaxed italic lg:max-w-md md:ml-auto lg:mr-12">
-                    {client.role}
-                  </p>
-                </div>
-
-                <div className="hidden lg:flex opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-8 group-hover:translate-x-0">
-                  <div className="w-16 h-16 rounded-full border border-black flex items-center justify-center text-black">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                    </svg>
-                  </div>
-                </div>
+              <div className="mt-8">
+                <h3 className="text-3xl md:text-5xl font-condensed uppercase tracking-tighter leading-[0.85] mb-6">
+                  {client.name}
+                </h3>
+                <div className="h-px w-0 group-hover:w-full bg-black/20 transition-all duration-700 mb-6"></div>
+                <p className="text-xs md:text-sm font-medium leading-relaxed italic opacity-60 group-hover:opacity-100 transition-opacity duration-500 line-clamp-3">
+                  {client.role}
+                </p>
               </div>
             </a>
           ))}
