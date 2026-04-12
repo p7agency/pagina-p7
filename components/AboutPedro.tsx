@@ -23,9 +23,7 @@ const AboutPedro: React.FC = () => {
             <div className="relative group p-6 md:p-0">
               <div className="absolute -inset-4 border border-white/5 md:group-hover:border-white/20 transition-colors duration-700 rounded-lg md:rounded-none"></div>
               <p className="relative z-10 text-[10px] md:text-xs uppercase font-bold tracking-[0.3em] text-white/40 leading-relaxed">
-                FUNDADOR P7 AGENCY <br />
-                ESTRATEGISTA DE POSICIONAMENTO <br />
-                ESPECIALISTA EM PERCEPÇÃO DE VALOR
+                FUNDADOR DA P7 AGENCY
               </p>
             </div>
           </div>
@@ -33,9 +31,7 @@ const AboutPedro: React.FC = () => {
           {/* Coluna de Texto Integral */}
           <div className="lg:col-span-7 flex flex-col justify-center h-full pt-8 md:pt-12">
             <div className="space-y-8 md:space-y-10">
-              <p className="text-xl md:text-4xl font-light leading-tight text-white italic">
-                "Não construímos apenas perfis. Projetamos autoridade que converte atenção em desejo inquestionável."
-              </p>
+
               
               <div className="space-y-6 md:space-y-8 text-white/50 leading-relaxed text-base md:text-lg max-w-2xl font-light">
                 <p>
