@@ -23,7 +23,7 @@ const AboutPedro: React.FC = () => {
             <div className="relative group p-6 md:p-0">
               <div className="absolute -inset-4 border border-white/5 md:group-hover:border-white/20 transition-colors duration-700 rounded-lg md:rounded-none"></div>
               <p className="relative z-10 text-[10px] md:text-xs uppercase font-bold tracking-[0.3em] text-white/40 leading-relaxed">
-                CEO P7 AGENCY <br />
+                FUNDADOR P7 AGENCY <br />
                 ESTRATEGISTA DE POSICIONAMENTO <br />
                 ESPECIALISTA EM PERCEPÇÃO DE VALOR
               </p>
@@ -39,10 +39,14 @@ const AboutPedro: React.FC = () => {
               
               <div className="space-y-6 md:space-y-8 text-white/50 leading-relaxed text-base md:text-lg max-w-2xl font-light">
                 <p>
-                  Pedro Poubel é estrategista digital e CEO da P7 Agency. Atua desenvolvendo o posicionamento de empresas, marcas pessoais e profissionais que buscam escalar sua autoridade e valor no ambiente digital. Com olhar apurado para comunicação, clareza de mensagem e construção de percepção, Pedro lidera projetos que unem visão estratégica, sofisticação e resultado.
+                  Pedro Poubel é o fundador da marca P7.<br />
+                  A P7 nasce para ser uma extensão da vida de Pedro Poubel. Ela é feita para trazer ao mercado sua visão de mundo e seus princípios, aplicados em diferentes setores.
                 </p>
                 <p>
-                  Com passagens por projetos que movimentaram múltiplos 7 dígitos, ele consolidou a P7 como o porto seguro para profissionais que dominam o "offline", mas ainda não são percebidos como elite no "online". Sua metodologia foca em transformar conhecimento técnico em narrativa de poder, garantindo que a excelência do cliente seja traduzida em valor financeiro e prestígio de mercado.
+                  Atua estruturando marcas e projetos que desejam se comunicar com clareza e estratégia no ambiente digital, usando o espaço como ferramenta de escala em seu negócio.
+                </p>
+                <p>
+                  Seu trabalho integra estratégia, conteúdo e modelo de negócio, com uma metodologia que foca em transformar conhecimento técnico em narrativa, garantindo que a excelência do cliente seja traduzida em posicionamento de excelência no mercado digital.
                 </p>
               </div>
             </div>
