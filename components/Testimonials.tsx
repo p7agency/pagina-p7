@@ -4,12 +4,12 @@ const testimonials = [
   {
     name: "Martina Bugs",
     role: "Mentora de marcas, com vivência de +30 anos no mercado do luxo",
-    text: "Pedro possui uma habilidade que poucos têm: enxergar a alma do cliente. Ele captou com precisão meu modo de expressão e a essência do que desejo transmitir ao meu público de alto padrão. O trabalho da P7 não é apenas marketing, é arquitetura de imagem."
+    text: "O Pedro, da agência P7, é daqueles talentos raros. Quando nos encontramos on-line, a sintonia foi imediata. Ele captou com precisão o que eu buscava para minhas redes - meu modo de expressão, minha interação e a essência do que desejo transmitir ao meu público."
   },
   {
     name: "Mariane Junqueira",
     role: "Mentora de marcas, com vivência de +30 anos no mercado do luxo",
-    text: "Você soube captar a nossa história e nossos desejos de uma forma criativa e profissional. Esta parceria já é um grande sucesso, pois o digital finalmente reflete nossa trajetória real. A clareza que o Pedro traz para o projeto é o que faltava para nossa escala."
+    text: "Pedro, gostaria de dizer que estou muito feliz com o seu trabalho. Você soube captar a nossa história, nossos desejos e está transmitindo isso nas suas postagens de uma forma criativa e profissional."
   }
 ];
 
@@ -20,7 +20,7 @@ const Testimonials: React.FC = () => {
         <div className="mb-32">
           <p className="text-[10px] uppercase font-bold text-white/40 mb-8 tracking-[0.5em] text-center">Reconhecimento de Mercado</p>
           <h2 className="text-5xl md:text-8xl font-condensed uppercase leading-none text-center">
-            Vozes da<br />Autoridade
+            O que dizem<br />sobre a P7
           </h2>
         </div>
 
@@ -30,7 +30,7 @@ const Testimonials: React.FC = () => {
               <div className="flex-1 space-y-12">
                 <div className="relative">
                   <span className="absolute -top-20 -left-10 text-[15vw] font-condensed opacity-5 select-none">"</span>
-                  <blockquote className="text-2xl md:text-5xl font-light leading-tight text-white/80 relative z-10 transition-colors group-hover:text-white">
+                  <blockquote className="text-xl md:text-3xl font-light leading-tight text-white/80 relative z-10 transition-colors group-hover:text-white">
                     {t.text}
                   </blockquote>
                 </div>
