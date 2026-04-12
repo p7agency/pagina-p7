@@ -17,6 +17,9 @@ const AboutPedro: React.FC = () => {
               </h2>
             </div>
             
+            <img src="/P7-1.JPG" alt="Pedro Poubel" className="w-full grayscale hover:grayscale-0 transition-all duration-700 object-cover border border-white/10" />
+
+            
             <div className="relative group p-6 md:p-0">
               <div className="absolute -inset-4 border border-white/5 md:group-hover:border-white/20 transition-colors duration-700 rounded-lg md:rounded-none"></div>
               <p className="relative z-10 text-[10px] md:text-xs uppercase font-bold tracking-[0.3em] text-white/40 leading-relaxed">

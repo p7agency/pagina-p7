@@ -54,7 +54,7 @@ const About: React.FC = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-6 md:gap-8 items-start sm:items-center">
                   <a 
-                    href="https://api.whatsapp.com/send/?phone=5527999572486&text&type=phone_number&app_absent=0" 
+                    href="https://forms.gle/QF1tvGkUUNRj7FLL7" 
                     target="_blank" 
                     className="group/btn relative inline-flex items-center gap-6 bg-transparent border border-white/20 text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold uppercase text-[9px] md:text-[10px] tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-700 ease-out overflow-hidden"
                   >

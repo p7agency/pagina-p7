@@ -51,7 +51,7 @@ const Services: React.FC = () => {
 
         <div className="mt-32 flex justify-center">
           <a 
-            href="https://api.whatsapp.com/send/?phone=5527999572486&text&type=phone_number&app_absent=0" 
+            href="https://forms.gle/QF1tvGkUUNRj7FLL7" 
             target="_blank" 
             className="group flex flex-col items-center gap-6"
           >

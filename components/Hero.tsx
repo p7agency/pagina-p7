@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
             
             <div className="flex flex-wrap gap-6 items-center">
               <a 
-                href="https://api.whatsapp.com/send/?phone=5527999572486&text&type=phone_number&app_absent=0" 
+                href="https://forms.gle/QF1tvGkUUNRj7FLL7" 
                 target="_blank" 
                 className="group relative inline-flex items-center gap-6 bg-white text-black px-10 py-5 md:px-12 md:py-6 rounded-full font-black uppercase text-[10px] md:text-[11px] tracking-[0.3em] transition-all duration-500 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
               >

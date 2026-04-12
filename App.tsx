@@ -6,13 +6,9 @@ import ForWhom from './components/ForWhom';
 import Projects from './components/Projects';
 import AboutPedro from './components/AboutPedro';
 import Testimonials from './components/Testimonials';
-import SocialProof from './components/SocialProof';
 import Vision from './components/Vision';
 import Services from './components/Services';
-import Crea7or from './components/Crea7or';
 import Expertise from './components/Expertise';
-import FinalCTA from './components/FinalCTA';
-import ContactDrawer from './components/ContactDrawer';
 import Logo from './Logo';
 
 const App: React.FC = () => {
@@ -38,23 +34,14 @@ const App: React.FC = () => {
         {/* Seção Depoimentos: Vozes da Autoridade */}
         <Testimonials />
 
-        {/* Seção Prova Social: Alcance & Performance (Case Nutrição) */}
-        <SocialProof />
-
         {/* Seção Visão: Autoridade, Clareza e Valor */}
         <Vision />
 
         {/* Seção Serviços: O catálogo de soluções */}
         <Services />
 
-        {/* Seção CREA7OR: O acelerador de autoridade */}
-        <Crea7or />
-
         {/* Seção Metodologia: O Resultado é Fruto da Estratégia */}
         <Expertise />
-
-        {/* Call to Action Final */}
-        <FinalCTA />
       </main>
 
       <footer className="py-32 px-6 md:px-16 border-t border-white/10 bg-black">
@@ -92,7 +79,7 @@ const App: React.FC = () => {
             <div className="flex flex-col gap-8">
               <span className="opacity-20 border-b border-white/10 pb-4">CONTATO</span>
               <a href="mailto:p7agency.contato@gmail.com" className="hover:opacity-50 transition-opacity">Email</a>
-              <a href="https://api.whatsapp.com/send/?phone=5527999572486&text&type=phone_number&app_absent=0" target="_blank" className="hover:opacity-50 transition-opacity">WhatsApp</a>
+              <a href="https://forms.gle/QF1tvGkUUNRj7FLL7" target="_blank" className="hover:opacity-50 transition-opacity">WhatsApp</a>
             </div>
           </div>
         </div>
@@ -106,7 +93,6 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      <ContactDrawer />
     </div>
   );
 };

@@ -4,7 +4,6 @@ const Header: React.FC = () => {
   const navItems = [
     { label: 'Projetos', href: '#projetos' },
     { label: 'Serviços', href: '#serviços' },
-    { label: 'CREA7OR', href: '#crea7or' },
     { label: 'Sobre', href: '#sobre' },
   ];
 
@@ -24,7 +23,7 @@ const Header: React.FC = () => {
       
       <div className="flex-1 flex justify-end">
         <a 
-          href="https://api.whatsapp.com/send/?phone=5527999572486&text&type=phone_number&app_absent=0" 
+          href="https://forms.gle/QF1tvGkUUNRj7FLL7" 
           target="_blank" 
           className="border-2 border-white px-6 md:px-10 py-3 rounded-full hover:bg-white hover:text-black transition-all text-center whitespace-nowrap"
         >
