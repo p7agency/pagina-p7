@@ -48,9 +48,7 @@ const Testimonials: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-40 text-center">
-          <p className="text-[10px] uppercase font-bold tracking-[0.5em] opacity-20">Conectando legados ao futuro digital através de autoridade real.</p>
-        </div>
+
       </div>
     </section>
   );

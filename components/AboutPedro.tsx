@@ -9,9 +9,7 @@ const AboutPedro: React.FC = () => {
           {/* Coluna de Título e Perfil */}
           <div className="lg:col-span-5 space-y-8 md:space-y-12">
             <div>
-              <p className="text-[10px] uppercase font-bold text-white/40 mb-8 tracking-[0.5em] flex items-center gap-4">
-                <span className="w-8 h-px bg-white/20"></span> Liderança Estratégica
-              </p>
+
               <h2 className="text-6xl md:text-9xl font-condensed uppercase leading-[0.8] tracking-tighter">
                 Pedro<br />Poubel
               </h2>
@@ -44,6 +42,16 @@ const AboutPedro: React.FC = () => {
                 <p>
                   Seu trabalho integra estratégia, conteúdo e modelo de negócio, com uma metodologia que foca em transformar conhecimento técnico em narrativa, garantindo que a excelência do cliente seja traduzida em posicionamento de excelência no mercado digital.
                 </p>
+              </div>
+              </div>
+              
+              <div className="pt-8">
+                <a href="https://www.instagram.com/poubel7/" target="_blank" className="inline-flex items-center gap-6 border border-white/20 px-8 py-4 rounded-full group/btn hover:bg-white hover:text-black transition-all duration-700">
+                  <span className="text-[10px] uppercase font-bold tracking-[0.3em]">Seguir no Instagram</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover/btn:translate-x-1 transition-transform">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>

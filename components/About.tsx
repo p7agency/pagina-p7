@@ -66,11 +66,7 @@ const About: React.FC = () => {
                     </div>
                   </a>
                   
-                  <div className="flex items-center gap-3 md:gap-4 opacity-20 hover:opacity-50 transition-opacity cursor-help">
-                    <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] font-black">FRAMEWORK_V2</span>
-                    <div className="w-1 h-1 rounded-full bg-white"></div>
-                    <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] font-black">ESTRATÉGIA_ELITE</span>
-                  </div>
+
                 </div>
               </div>
             </div>

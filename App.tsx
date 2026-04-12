@@ -70,12 +70,6 @@ const App: React.FC = () => {
               <a href="#produtos" className="hover:opacity-50 transition-opacity">Produtos</a>
               <a href="#sobre" className="hover:opacity-50 transition-opacity">Sobre</a>
             </div>
-            
-            <div className="flex flex-col gap-8">
-              <span className="opacity-20 border-b border-white/10 pb-4">CONTATO</span>
-              <a href="mailto:p7agency.contato@gmail.com" className="hover:opacity-50 transition-opacity">Email</a>
-              <a href="https://forms.gle/JBhzytiUhuHGVzNz7" target="_blank" className="hover:opacity-50 transition-opacity">WhatsApp</a>
-            </div>
           </div>
         </div>
         
