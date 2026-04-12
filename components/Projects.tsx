@@ -20,9 +20,12 @@ const Projects: React.FC = () => {
         
         <div className="flex flex-col">
           {CLIENTS.map((client) => (
-            <div 
+            <a 
               key={client.id} 
-              className="group relative border-b border-white/10 py-8 md:py-16 cursor-pointer transition-all duration-700 md:hover:px-12"
+              href={client.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block relative border-b border-white/10 py-8 md:py-16 cursor-pointer transition-all duration-700 md:hover:px-12"
             >
               {/* Overlay Background on Hover - Only Desktop */}
               <div className="absolute inset-0 bg-white translate-x-full md:group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"></div>
@@ -52,7 +55,7 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
