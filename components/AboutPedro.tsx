@@ -43,7 +43,6 @@ const AboutPedro: React.FC = () => {
                   Seu trabalho integra estratégia, conteúdo e modelo de negócio, com uma metodologia que foca em transformar conhecimento técnico em narrativa, garantindo que a excelência do cliente seja traduzida em posicionamento de excelência no mercado digital.
                 </p>
               </div>
-              </div>
               
               <div className="pt-8">
                 <a href="https://www.instagram.com/poubel7/" target="_blank" className="inline-flex items-center gap-6 border border-white/20 px-8 py-4 rounded-full group/btn hover:bg-white hover:text-black transition-all duration-700">
