@@ -3,39 +3,15 @@ import { ServiceItem } from './types';
 export const SERVICES: ServiceItem[] = [
   { 
     id: '1', 
-    title: 'Gestão de Rede Social', 
+    title: 'CREA7OR', 
     code: '01', 
-    description: 'Criação de conteúdo estratégico, visual refinado e gestão completa da sua presença digital com foco em autoridade e posicionamento.' 
+    description: 'Um plano de ação prático para você parar de postar sem direção e começar a construir consistência de verdade. Você organiza sua linha editoria, entende o que comunicar e cria uma base sólida para gerar resultado.' 
   },
   { 
     id: '2', 
-    title: 'Gestão de Tráfego', 
+    title: 'MOV7', 
     code: '02', 
-    description: 'Campanhas inteligentes com foco em geração de demanda qualificada, visibilidade e aceleração de resultados.' 
-  },
-  { 
-    id: '3', 
-    title: 'Landing Pages', 
-    code: '03', 
-    description: 'Criação de páginas personalizadas com estrutura estratégica, copy persuasiva e design refinado para gerar conversão.' 
-  },
-  { 
-    id: '4', 
-    title: 'Identidade de Marca', 
-    code: '04', 
-    description: 'Desenvolvimento ou aprimoramento da identidade visual da marca, com foco em consistência, sofisticação e alinhamento.' 
-  },
-  { 
-    id: '5', 
-    title: 'Soluções em I.A.', 
-    code: '05', 
-    description: 'Automatizações inteligentes para agilizar processos, otimizar produção de conteúdo e elevar performance digital com eficiência.' 
-  },
-  { 
-    id: '6', 
-    title: 'Consultorias', 
-    code: '06', 
-    description: 'Orientação estratégica para posicionamento, comunicação e estruturação de produtos digitais, com foco em valor e clareza.' 
+    description: 'Uma assessoria completa onde entramos em todos os pilares do seu projeto para construir crescimento de verdade. Trabalhamos no branding, posicionamento, conteúdo, produtos, ofertas e funil de vendas de forma integrada. Um plano organizado para o crescimento do seu projeto no ambiente digital.' 
   }
 ];
 
