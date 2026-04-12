@@ -6,7 +6,6 @@ import ForWhom from './components/ForWhom';
 import Projects from './components/Projects';
 import AboutPedro from './components/AboutPedro';
 import Testimonials from './components/Testimonials';
-import Vision from './components/Vision';
 import Services from './components/Services';
 import Expertise from './components/Expertise';
 import Logo from './Logo';
@@ -34,8 +33,7 @@ const App: React.FC = () => {
         {/* Seção Depoimentos: Vozes da Autoridade */}
         <Testimonials />
 
-        {/* Seção Visão: Autoridade, Clareza e Valor */}
-        <Vision />
+
 
         {/* Seção Serviços: O catálogo de soluções */}
         <Services />
@@ -50,11 +48,8 @@ const App: React.FC = () => {
             <Logo size="md" />
             <div className="space-y-4">
               <div className="text-[10px] uppercase tracking-[0.4em] font-black opacity-30">
-                © 2026 P7 AGENCY — DIGITAL POSITIONING
+                © 2026 P7 AGENCY — POSICIONAMENTO DIGITAL
               </div>
-              <p className="text-[10px] uppercase tracking-widest opacity-20 max-w-xs leading-relaxed">
-                ESTRATEGISTA DE POSICIONAMENTO E PERCEPÇÃO DE VALOR PARA MARCAS QUE NÃO ACEITAM O COMUM.
-              </p>
             </div>
           </div>
           

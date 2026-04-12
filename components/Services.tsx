@@ -51,7 +51,7 @@ const Services: React.FC = () => {
 
         <div className="mt-32 flex justify-center">
           <a 
-            href="https://forms.gle/QF1tvGkUUNRj7FLL7" 
+            href="https://forms.gle/JBhzytiUhuHGVzNz7" 
             target="_blank" 
             className="group flex flex-col items-center gap-6"
           >
@@ -60,7 +60,7 @@ const Services: React.FC = () => {
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </div>
-            <span className="text-[10px] uppercase font-bold tracking-[0.5em] text-white/40 group-hover:text-white transition-colors">Solicitar Proposta Customizada</span>
+            <span className="text-[10px] uppercase font-bold tracking-[0.5em] text-white/40 group-hover:text-white transition-colors">Quero construir meu posicionamento</span>
           </a>
         </div>
       </div>
