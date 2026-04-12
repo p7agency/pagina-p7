@@ -5,16 +5,10 @@ const Projects: React.FC = () => {
   return (
     <section id="projetos" className="py-24 md:py-40 px-6 md:px-16 border-b border-white/10 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 md:mb-32 gap-8">
+        <div className="flex flex-col mb-20 md:mb-32">
           <div className="space-y-4">
-            <p className="text-[10px] uppercase font-bold text-white/40 tracking-[0.5em]">Selected Works</p>
-            <h2 className="text-6xl md:text-9xl font-condensed uppercase leading-[0.8]">Projetos<br />P7</h2>
-            <div className="h-1 w-24 bg-white"></div>
-          </div>
-          <div className="max-w-xs text-right hidden lg:block">
-            <p className="text-sm text-white/40 leading-relaxed italic">
-              "A percepção de valor não é um acidente, é o resultado de um posicionamento construído com intenção estratégica."
-            </p>
+            <h2 className="text-6xl md:text-8xl font-condensed uppercase leading-[0.85] max-w-4xl">Projetos já gerenciados pela P7</h2>
+            <div className="h-1 w-24 bg-white mt-8"></div>
           </div>
         </div>
         
