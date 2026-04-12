@@ -5,7 +5,7 @@ export const SERVICES: ServiceItem[] = [
     id: '1', 
     title: 'CREA7OR', 
     code: '01', 
-    description: 'Um plano de ação prático para você parar de postar sem direção e começar a construir consistência de verdade. Você organiza sua linha editoria, entende o que comunicar e cria uma base sólida para gerar resultado.' 
+    description: 'Um plano de ação prático para você parar de postar sem direção e começar a construir consistência de verdade. Você organiza sua linha editorial, entende o que comunicar e cria uma base sólida para gerar resultado.' 
   },
   { 
     id: '2', 
