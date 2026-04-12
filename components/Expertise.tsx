@@ -1,71 +1,83 @@
 import React from 'react';
 
-const steps = [
+const deliverables = [
   {
-    code: "01",
-    title: "Arquitetura de Marca",
-    desc: "Análise profunda de essência para construir pilares de autoridade inquestionáveis.",
-    tags: ["CLAREZA", "DNA", "VOZ"]
+    id: "01",
+    title: "No Posicionamento",
+    items: [
+      "Clareza de proposta de valor",
+      "Definição de persona e diferenciais",
+      "Estrutura de comunicação, narrativa e pilares da marca"
+    ]
   },
   {
-    code: "02",
-    title: "DESIGN DE PERCEPÇÃO",
-    desc: "Transformamos estratégia em visual de elite que comunica valor antes da primeira palavra.",
-    tags: ["ESTÉTICA", "RITMO", "SOFISTICAÇÃO"]
+    id: "02",
+    title: "No Conteúdo",
+    items: [
+      "Linha editorial definida",
+      "Roteiros e estrutura de conteúdo",
+      "Edição, postagens e análise de métricas"
+    ]
   },
   {
-    code: "03",
-    title: "ECOSSISTEMA DE CONVERSÃO",
-    desc: "A união entre tráfego qualificado e conteúdo magnético para gerar desejo real.",
-    tags: ["ESCALA", "RETENÇÃO", "ROI"]
+    id: "03",
+    title: "No Branding",
+    items: [
+      "Identidade visual alinhada",
+      "Direção criativa de imagem e vídeos",
+      "Padrão estético da marca"
+    ]
+  },
+  {
+    id: "04",
+    title: "Nos Produtos / Ofertas",
+    items: [
+      "Estrutura de ofertas organizada",
+      "Clareza na proposta de valor",
+      "Argumentos de venda definidos"
+    ]
+  },
+  {
+    id: "05",
+    title: "No Funil de Vendas",
+    items: [
+      "Jornada do cliente estruturada",
+      "Processo de conversão definido",
+      "Base para aumento de vendas"
+    ]
   }
 ];
 
 const Expertise: React.FC = () => {
   return (
-    <section id="expertise" className="py-24 md:py-40 px-6 md:px-16 bg-black text-white border-b border-white/10 relative overflow-hidden">
+    <section id="entregas" className="py-24 md:py-40 px-6 md:px-16 bg-black text-white border-b border-white/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-          
-          <div className="lg:col-span-5 lg:sticky lg:top-40">
-            <p className="text-[10px] uppercase font-bold text-white/40 mb-6 md:mb-8 tracking-[0.5em]">NOSSA METODOLOGIA</p>
-            <h2 className="text-4xl md:text-8xl font-[900] font-condensed uppercase leading-[0.9] md:leading-[0.8] mb-8 lg:mb-12">
-              O RESULTADO<br />É FRUTO DA<br />
-              <span className="text-white/20">ESTRATÉGIA.</span>
-            </h2>
-          </div>
+        <div className="mb-24 md:mb-32">
+          <h2 className="text-5xl md:text-8xl font-condensed uppercase tracking-tighter leading-[0.85] max-w-4xl">
+            O QUE VOCÊ VAI RECEBER COM NOSSO TRABALHO?
+          </h2>
+        </div>
 
-          <div className="lg:col-span-7 space-y-4 md:space-y-6">
-            {steps.map((step, index) => (
-              <div 
-                key={index} 
-                className="group relative border border-white/10 p-8 md:p-16 hover:border-white transition-all duration-700 bg-white/0 hover:bg-white/5 cursor-default"
-              >
-                <div className="flex flex-col md:flex-row justify-between gap-8">
-                  <div className="space-y-4 md:space-y-6 flex-1">
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] md:text-xs font-mono text-white/20 group-hover:text-white">{step.code}</span>
-                      <h3 className="text-2xl md:text-4xl font-[900] font-condensed uppercase tracking-tight">
-                        {step.title}
-                      </h3>
-                    </div>
-                    <p className="text-white/40 group-hover:text-white transition-colors text-base md:text-lg leading-relaxed max-w-md">
-                      {step.desc}
-                    </p>
-                  </div>
-                  
-                  <div className="flex flex-wrap md:flex-col gap-2 md:gap-3 justify-start md:justify-center md:items-end">
-                    {step.tags.map(tag => (
-                      <span key={tag} className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest border border-white/10 px-3 md:px-4 py-1.5 md:py-2 rounded-full opacity-30 group-hover:opacity-100 group-hover:border-white/40 transition-all">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {deliverables.map((item, index) => (
+            <div 
+              key={index} 
+              className="group border border-white/10 p-8 md:p-12 hover:bg-white hover:text-black transition-all duration-700 cursor-default flex flex-col"
+            >
+              <div className="flex items-center gap-4 mb-10">
+                <span className="text-xl font-mono opacity-20 group-hover:opacity-100 transition-opacity">[{item.id}]</span>
+                <h3 className="text-3xl font-condensed uppercase tracking-tight">{item.title}</h3>
               </div>
-            ))}
-          </div>
-
+              <ul className="space-y-4 opacity-60 group-hover:opacity-100 transition-opacity duration-500 flex-1">
+                {item.items.map((bullet, idx) => (
+                  <li key={idx} className="text-sm font-medium leading-relaxed flex items-start gap-3">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-current opacity-50 flex-shrink-0"></span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
