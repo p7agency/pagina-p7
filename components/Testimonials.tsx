@@ -15,7 +15,7 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="depoimentos" className="py-40 px-6 md:px-16 bg-black border-b border-white/10 overflow-hidden">
+    <section id="depoimentos" className="py-24 md:py-40 px-6 md:px-16 bg-black border-b border-white/10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-32">
           <p className="text-[10px] uppercase font-bold text-white/40 mb-8 tracking-[0.5em] text-center">Reconhecimento de Mercado</p>

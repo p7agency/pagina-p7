@@ -3,12 +3,12 @@ import { SERVICES } from '../constants';
 
 const Services: React.FC = () => {
   return (
-    <section id="produtos" className="py-40 px-6 md:px-16 border-b border-white/10 bg-black overflow-hidden">
+    <section id="produtos" className="py-24 md:py-40 px-6 md:px-16 border-b border-white/10 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-32 gap-8">
           <div className="space-y-4">
 
-            <h2 className="text-7xl md:text-9xl font-condensed uppercase leading-[0.8]">Produtos &<br />Soluções</h2>
+            <h2 className="text-5xl md:text-7xl lg:text-9xl font-condensed uppercase leading-[0.8]">Produtos &<br />Soluções</h2>
             <div className="h-1 w-24 bg-white"></div>
           </div>
           <div className="max-w-xs text-right hidden md:block">
@@ -30,7 +30,7 @@ const Services: React.FC = () => {
               <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 group-hover:px-8 transition-all duration-700">
                 <div className="flex items-center gap-12 md:gap-20">
                   <span className="text-xl font-mono opacity-30 group-hover:text-black group-hover:opacity-100 transition-all">[{service.code}]</span>
-                  <h3 className="text-4xl md:text-6xl font-condensed uppercase tracking-tighter group-hover:text-black transition-colors duration-500">
+                  <h3 className="text-3xl md:text-6xl font-condensed uppercase tracking-tighter group-hover:text-black transition-colors duration-500">
                     {service.title}
                   </h3>
                 </div>

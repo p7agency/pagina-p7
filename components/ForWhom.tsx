@@ -20,11 +20,11 @@ const ForWhom: React.FC = () => {
   ];
 
   return (
-    <section className="py-40 px-6 md:px-16 bg-white text-black border-b border-black/10 overflow-hidden">
+    <section className="py-24 md:py-40 px-6 md:px-16 bg-white text-black border-b border-black/10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col justify-between items-start mb-32 gap-8">
           <div className="space-y-4">
-            <h2 className="text-7xl md:text-9xl font-condensed uppercase leading-[0.8] mb-4">
+            <h2 className="text-6xl md:text-8xl font-condensed uppercase leading-[0.8] mb-4">
               Como<br />Fazemos
             </h2>
             <div className="h-1 w-24 bg-black"></div>
