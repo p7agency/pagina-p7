@@ -72,14 +72,14 @@ const App: React.FC = () => {
             <div className="flex flex-col gap-8">
               <span className="opacity-20 border-b border-white/10 pb-4">ESTRUTURA</span>
               <a href="#projetos" className="hover:opacity-50 transition-opacity">Projetos</a>
-              <a href="#serviços" className="hover:opacity-50 transition-opacity">Serviços</a>
+              <a href="#produtos" className="hover:opacity-50 transition-opacity">Produtos</a>
               <a href="#sobre" className="hover:opacity-50 transition-opacity">Sobre</a>
             </div>
             
             <div className="flex flex-col gap-8">
               <span className="opacity-20 border-b border-white/10 pb-4">CONTATO</span>
               <a href="mailto:p7agency.contato@gmail.com" className="hover:opacity-50 transition-opacity">Email</a>
-              <a href="https://forms.gle/QF1tvGkUUNRj7FLL7" target="_blank" className="hover:opacity-50 transition-opacity">WhatsApp</a>
+              <a href="https://forms.gle/JBhzytiUhuHGVzNz7" target="_blank" className="hover:opacity-50 transition-opacity">WhatsApp</a>
             </div>
           </div>
         </div>

@@ -3,12 +3,12 @@ import { SERVICES } from '../constants';
 
 const Services: React.FC = () => {
   return (
-    <section id="serviços" className="py-40 px-6 md:px-16 border-b border-white/10 bg-black overflow-hidden">
+    <section id="produtos" className="py-40 px-6 md:px-16 border-b border-white/10 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-32 gap-8">
           <div className="space-y-4">
             <p className="text-[10px] uppercase font-bold text-white/40 tracking-[0.5em]">Core Services</p>
-            <h2 className="text-7xl md:text-9xl font-condensed uppercase leading-[0.8]">Serviços &<br />Soluções</h2>
+            <h2 className="text-7xl md:text-9xl font-condensed uppercase leading-[0.8]">Produtos &<br />Soluções</h2>
             <div className="h-1 w-24 bg-white"></div>
           </div>
           <div className="max-w-xs text-right hidden md:block">

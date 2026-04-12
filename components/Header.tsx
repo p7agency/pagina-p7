@@ -3,7 +3,7 @@ import React from 'react';
 const Header: React.FC = () => {
   const navItems = [
     { label: 'Projetos', href: '#projetos' },
-    { label: 'Serviços', href: '#serviços' },
+    { label: 'Produtos', href: '#produtos' },
     { label: 'Sobre', href: '#sobre' },
   ];
 
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
       
       <div className="flex-1 flex justify-end">
         <a 
-          href="https://forms.gle/QF1tvGkUUNRj7FLL7" 
+          href="https://forms.gle/JBhzytiUhuHGVzNz7" 
           target="_blank" 
           className="border-2 border-white px-6 md:px-10 py-3 rounded-full hover:bg-white hover:text-black transition-all text-center whitespace-nowrap"
         >
