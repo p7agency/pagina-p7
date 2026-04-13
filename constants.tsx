@@ -90,7 +90,7 @@ export const CLIENTS = [
   },
   {
     id: '13',
-    name: 'Dra Letícia Luz',
+    name: 'Dra. Letícia Luz',
     role: 'Médica referência, especialista em emagrecimento com saúde, equilíbrio e cuidado.',
     link: 'https://www.instagram.com/draleticia.luz/'
   }
