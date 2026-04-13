@@ -87,6 +87,12 @@ export const CLIENTS = [
     name: 'Entrelinhas Movimento',
     role: 'Treinamento e mentoria para marcas que desejam evoluir usando o luxo como inspiração.',
     link: 'https://www.instagram.com/entrelinhasmovimento/'
+  },
+  {
+    id: '13',
+    name: 'Dra Letícia Luz',
+    role: 'Médica referência, especialista em emagrecimento com saúde, equilíbrio e cuidado.',
+    link: 'https://www.instagram.com/draleticia.luz/'
   }
 ];
 
