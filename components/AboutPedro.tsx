@@ -21,7 +21,7 @@ const AboutPedro: React.FC = () => {
             <div className="relative group p-6 md:p-0">
               <div className="absolute -inset-4 border border-white/5 md:group-hover:border-white/20 transition-colors duration-700 rounded-lg md:rounded-none"></div>
               <p className="relative z-10 text-[10px] md:text-xs uppercase font-bold tracking-[0.3em] text-white/40 leading-relaxed">
-                FUNDADOR DA P7 AGENCY
+                FUNDADOR DA P7
               </p>
             </div>
           </div>

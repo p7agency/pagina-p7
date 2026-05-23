@@ -18,7 +18,7 @@ const About: React.FC = () => {
               </div>
               <div className="h-[2px] w-12 bg-white/20 mb-8 md:mb-12 group-hover/section:w-24 transition-all duration-700"></div>
               <p className="text-[10px] md:text-xs leading-relaxed text-white/40 max-w-[280px] font-bold uppercase tracking-[0.4em] italic transition-colors hover:text-white/80">
-                A P7 AGENCY NASCEU PARA ESTRUTURAR O POSICIONAMENTO DE QUEM NÃO ACEITA SER APENAS MAIS UM NO DIGITAL.
+                A P7 NASCEU PARA ESTRUTURAR O POSICIONAMENTO DE QUEM NÃO ACEITA SER APENAS MAIS UM NO DIGITAL.
               </p>
             </div>
           </div>

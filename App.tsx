@@ -8,11 +8,12 @@ import AboutPedro from './components/AboutPedro';
 import Testimonials from './components/Testimonials';
 import Services from './components/Services';
 import Expertise from './components/Expertise';
+import Levels from './components/Levels';
 import Logo from './Logo';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen selection:bg-white selection:text-black overflow-x-hidden bg-black text-white font-sans">
+    <div className="min-h-screen selection:bg-[#f0f0f0] selection:text-[#0a0a0a] overflow-x-hidden bg-[#0a0a0a] text-[#f0f0f0] font-sans">
       <Header />
       
       <main className="relative">
@@ -21,10 +22,10 @@ const App: React.FC = () => {
         {/* Seção Sobre: Missão e Percepção de Valor */}
         <About />
 
-        {/* Seção Público: Público de Elite (Para quem é) */}
+        {/* Seção Público: Como Fazemos */}
         <ForWhom />
 
-        {/* Seção Projetos: Os 10 Cases Selecionados */}
+        {/* Seção Projetos: Os Cases Selecionados */}
         <Projects />
 
         {/* Seção Pedro Poubel: Quem é o estrategista */}
@@ -33,7 +34,8 @@ const App: React.FC = () => {
         {/* Seção Depoimentos: Vozes da Autoridade */}
         <Testimonials />
 
-
+        {/* Seção Levels: Metodologia P7 */}
+        <Levels />
 
         {/* Seção Serviços: O catálogo de soluções */}
         <Services />
@@ -42,7 +44,7 @@ const App: React.FC = () => {
         <Expertise />
       </main>
 
-      <footer className="py-32 px-6 md:px-16 border-t border-white/10 bg-black">
+      <footer className="py-32 px-6 md:px-16 border-t border-[#f0f0f0]/10 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
           <div className="flex flex-col gap-12">
             <Logo size="md" />
@@ -55,7 +57,7 @@ const App: React.FC = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-20 text-[10px] uppercase font-bold tracking-[0.3em]">
             <div className="flex flex-col gap-8">
-              <span className="opacity-20 border-b border-white/10 pb-4">SOCIAL</span>
+              <span className="opacity-20 border-b border-[#f0f0f0]/10 pb-4">SOCIAL</span>
               <a href="https://www.instagram.com/p7.agency/" target="_blank" className="hover:opacity-50 transition-opacity flex items-center gap-2 group">
                 Instagram <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
@@ -65,15 +67,16 @@ const App: React.FC = () => {
             </div>
             
             <div className="flex flex-col gap-8">
-              <span className="opacity-20 border-b border-white/10 pb-4">ESTRUTURA</span>
+              <span className="opacity-20 border-b border-[#f0f0f0]/10 pb-4">ESTRUTURA</span>
               <a href="#projetos" className="hover:opacity-50 transition-opacity">Projetos</a>
               <a href="#produtos" className="hover:opacity-50 transition-opacity">Produtos</a>
+              <a href="#levels" className="hover:opacity-50 transition-opacity">Levels</a>
               <a href="#sobre" className="hover:opacity-50 transition-opacity">Sobre</a>
             </div>
           </div>
         </div>
         
-        <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="mt-32 pt-12 border-t border-[#f0f0f0]/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-[9px] uppercase tracking-[0.5em] opacity-10">DESIGNED BY P7 ARCHITECTURE</p>
           <div className="flex gap-12 opacity-10 text-[9px] uppercase font-bold tracking-widest">
             <span>Privacidade</span>
