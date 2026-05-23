@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
 
           <div className="lg:col-span-4 lg:col-start-9 flex flex-col lg:text-right space-y-6 md:space-y-8 group/side">
             <p className="text-base md:text-lg text-white/50 group-hover/side:text-white transition-colors duration-700 leading-relaxed font-light">
-              A P7 Agency é focada em transformar a percepção digital de empresas e profissionais que buscam o <span className="text-white font-medium italic underline decoration-white/20 underline-offset-4">topo absoluto</span> do mercado.
+              A P7 é focada em transformar a percepção digital de empresas e profissionais que buscam o <span className="text-white font-medium italic underline decoration-white/20 underline-offset-4">topo absoluto</span> do mercado.
             </p>
             <div className="pt-6 border-t border-white/5 w-full flex lg:justify-end">
               <div className="flex items-center gap-4">

@@ -48,7 +48,7 @@ const App: React.FC = () => {
             <Logo size="md" />
             <div className="space-y-4">
               <div className="text-[10px] uppercase tracking-[0.4em] font-black opacity-30">
-                © 2026 P7 AGENCY — POSICIONAMENTO DIGITAL
+                © 2026 P7 — POSICIONAMENTO DIGITAL
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@ const App: React.FC = () => {
         </div>
         
         <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-[9px] uppercase tracking-[0.5em] opacity-10">DESIGNED BY P7 AGENCY ARCHITECTURE</p>
+          <p className="text-[9px] uppercase tracking-[0.5em] opacity-10">DESIGNED BY P7 ARCHITECTURE</p>
           <div className="flex gap-12 opacity-10 text-[9px] uppercase font-bold tracking-widest">
             <span>Privacidade</span>
             <span>Termos</span>

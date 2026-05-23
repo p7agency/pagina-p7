@@ -3,9 +3,9 @@ import { ServiceItem } from './types';
 export const SERVICES: ServiceItem[] = [
   { 
     id: '1', 
-    title: 'CREA7OR', 
+    title: 'POS7URE', 
     code: '01', 
-    description: 'Um plano de ação prático para você parar de postar sem direção e começar a construir consistência de verdade. Você organiza sua linha editorial, entende o que comunicar e cria uma base sólida para gerar resultado.' 
+    description: 'Uma imersão ao vivo onde a sua marca se torna atrativa no digital: com clareza de negócio, posicionamento de valor e autenticidade. Ele resolve o maior problema de quem está no digital: ter um projeto bom, mas que não é percebido, não atrai os clientes certos e não converte em faturamento real. A entrega acontece em uma sala online com Pedro Poubel, onde cada participante sai com o posicionamento definido, a marca estruturada e tudo pronto para crescer.' 
   },
   { 
     id: '2', 
@@ -96,4 +96,4 @@ export const CLIENTS = [
   }
 ];
 
-export const NAVIGATION = ['Projetos', 'Serviços', 'CREA7OR', 'Sobre', 'Contato'];
+export const NAVIGATION = ['Projetos', 'Serviços', 'Levels', 'Sobre', 'Contato'];

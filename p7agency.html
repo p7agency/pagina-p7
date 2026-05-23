@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P7 | Posicionamento Digital de Elite</title>
+    <meta name="description" content="A P7 eleva marcas através de clareza, valor e autoridade no ambiente digital. Posicionamento de excelência para quem busca o topo.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +15,15 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --text-primary: #f0f0f0;
+            --text-muted: #7a7a7a;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             cursor: crosshair;
             -webkit-font-smoothing: antialiased;
         }
@@ -30,8 +36,8 @@
             font-family: 'Montserrat', sans-serif;
         }
         ::selection {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: var(--text-primary);
+            color: var(--bg-primary);
         }
         .stardust {
             background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
@@ -40,14 +46,93 @@
             width: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: #000;
+            background: var(--bg-primary);
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #222;
         }
+
+        /* Level Timeline Styles */
+        @keyframes levelPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(240, 240, 240, 0.3); }
+            50% { box-shadow: 0 0 20px 6px rgba(240, 240, 240, 0.08); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes drawLine {
+            from { height: 0; }
+            to { height: 100%; }
+        }
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+        .level-card {
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .level-card:hover {
+            transform: translateX(12px);
+        }
+        .level-card:hover .level-number {
+            transform: scale(1.15);
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+        .level-card:hover .level-line {
+            background: var(--text-primary);
+            width: 80px;
+        }
+        .level-card:hover .level-content {
+            border-color: rgba(240, 240, 240, 0.3);
+        }
+        .level-card:hover .level-desc {
+            color: var(--text-primary);
+        }
+        .level-number {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .level-line {
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .level-content {
+            transition: all 0.5s ease;
+        }
+        .level-desc {
+            transition: color 0.5s ease;
+        }
+        .level-active .level-number {
+            animation: levelPulse 2.5s ease-in-out infinite;
+        }
+
+        /* Progress bar animation */
+        .progress-track {
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-track::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(240,240,240,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            100% { left: 100%; }
+        }
+
+        /* CTA glow */
+        @keyframes ctaGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(240,240,240,0.05); }
+            50% { box-shadow: 0 0 40px rgba(240,240,240,0.15), 0 0 80px rgba(240,240,240,0.05); }
+        }
     </style>
 </head>
-<body class="selection:bg-white selection:text-black overflow-x-hidden bg-black text-white custom-scrollbar">
+<body class="selection:bg-[#f0f0f0] selection:text-[#0a0a0a] overflow-x-hidden bg-[#0a0a0a] text-[#f0f0f0] custom-scrollbar">
     <div id="root"></div>
 
     <script type="text/babel">
@@ -69,34 +154,37 @@
 
         const Header = () => (
             <nav className="fixed top-0 left-0 w-full z-50 mix-blend-difference px-6 py-12 flex justify-between items-center uppercase text-[10px] tracking-[0.4em] font-black">
-                <div className="flex-1"></div>
+                <div className="flex-1">
+                    <a href="#" className="hover:opacity-40 transition-opacity font-montserrat tracking-[0.15em] text-[12px]">P7</a>
+                </div>
                 <div className="hidden lg:flex gap-16 flex-1 justify-center items-center">
                     <a href="#projetos" className="hover:opacity-40 transition-opacity">Projetos</a>
                     <a href="#produtos" className="hover:opacity-40 transition-opacity">Produtos</a>
+                    <a href="#levels" className="hover:opacity-40 transition-opacity">Levels</a>
                     <a href="#sobre" className="hover:opacity-40 transition-opacity">Sobre</a>
                 </div>
                 <div className="flex-1 flex justify-end">
-                    <a href="https://forms.gle/JBhzytiUhuHGVzNz7" target="_blank" class="border-2 border-white px-10 py-4 rounded-full hover:bg-white hover:text-black transition-all">CONECTAR</a>
+                    <a href="https://forms.gle/JBhzytiUhuHGVzNz7" target="_blank" className="border-2 border-white px-10 py-4 rounded-full hover:bg-white hover:text-black transition-all">CONECTAR</a>
                 </div>
             </nav>
         );
 
         const Hero = () => (
-            <section className="relative min-h-screen flex flex-col justify-center items-center bg-black text-white px-6 md:px-16 py-24 md:py-32 overflow-hidden border-b border-white/5">
+            <section className="relative min-h-screen flex flex-col justify-center items-center bg-[#0a0a0a] text-[#f0f0f0] px-6 md:px-16 py-24 md:py-32 overflow-hidden border-b border-[#f0f0f0]/5">
                 <div className="absolute inset-0 pointer-events-none opacity-[0.05] stardust"></div>
                 <div className="relative z-10 w-full max-w-7xl flex flex-col items-center">
                     <div className="mb-48 scale-[0.9] flex justify-center">
                         <img src="./P7.png" alt="P7" className="h-[24vw] w-auto object-contain invert" />
                     </div>
-                    <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-20 border-t border-white/10 pt-24">
+                    <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-20 border-t border-[#f0f0f0]/10 pt-24">
                         <div className="lg:col-span-8">
                             <h1 className="text-6xl md:text-[8.5vw] font-condensed uppercase leading-[0.82] tracking-tighter">
                                 Elevamos marcas através de <br />
-                                <span className="text-white/40 italic font-light tracking-normal">clareza</span>, valor e autoridade.
+                                <span className="text-[#7a7a7a] italic font-light tracking-normal">clareza</span>, valor e autoridade.
                             </h1>
                         </div>
                         <div className="lg:col-span-4 flex flex-col lg:text-right space-y-12">
-                            <p className="text-lg md:text-2xl text-white/50 leading-relaxed font-light">
+                            <p className="text-lg md:text-2xl text-[#7a7a7a] leading-relaxed font-light">
                                 A P7 é focada em transformar a percepção digital de empresas e profissionais que buscam o topo absoluto do mercado.
                             </p>
                         </div>
@@ -108,7 +196,7 @@
         const About = () => {
             const [isHovered, setIsHovered] = useState(false);
             return (
-                <section id="sobre" className="py-24 md:py-40 px-6 md:px-16 border-b border-white/10 bg-black relative overflow-hidden group/section">
+                <section id="sobre" className="py-24 md:py-40 px-6 md:px-16 border-b border-[#f0f0f0]/10 bg-[#0a0a0a] relative overflow-hidden group/section">
                     <div className="absolute inset-0 pointer-events-none opacity-[0.03] stardust"></div>
                     <div className="max-w-7xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-20 gap-y-32 items-start">
@@ -117,25 +205,25 @@
                                     <img src="./P7.png" alt="P7" className="h-[16vw] w-auto object-contain invert" />
                                 </div>
                                 <div className="space-y-12">
-                                    <div className="h-px w-24 bg-white/20 group-hover/section:w-32 transition-all"></div>
-                                    <p className="text-[12px] md:text-sm leading-relaxed text-white/40 max-w-[320px] font-black uppercase tracking-[0.5em] italic">
+                                    <div className="h-px w-24 bg-[#f0f0f0]/20 group-hover/section:w-32 transition-all"></div>
+                                    <p className="text-[12px] md:text-sm leading-relaxed text-[#7a7a7a] max-w-[320px] font-black uppercase tracking-[0.5em] italic">
                                         A P7 NASCEU PARA ESTRUTURAR O POSICIONAMENTO DE QUEM NÃO ACEITA SER APENAS MAIS UM NO DIGITAL.
                                     </p>
                                 </div>
                             </div>
                             <div className="lg:col-span-7 space-y-20">
                                 <div className="space-y-12" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                                    <h2 className="text-5xl md:text-[6.2vw] font-light leading-[1.05] text-white tracking-tight">
+                                    <h2 className="text-5xl md:text-[6.2vw] font-light leading-[1.05] text-[#f0f0f0] tracking-tight">
                                         <span className={`inline-block transition-opacity ${isHovered ? 'opacity-40' : ''}`}>Nossa missão é solucionar</span> <br />
                                         <span className={`inline-block transition-transform ${isHovered ? 'translate-x-4' : ''}`}>o maior gargalo do</span> <br />
                                         <span className={`inline-block transition-opacity ${isHovered ? 'opacity-40' : ''}`}>mercado moderno:</span> <br />
-                                        <span className="font-[900] border-b-[8px] border-white/20 pb-2 inline-block mt-4 hover:border-white transition-all">a falta de percepção de valor.</span>
+                                        <span className="font-[900] border-b-[8px] border-[#f0f0f0]/20 pb-2 inline-block mt-4 hover:border-[#f0f0f0] transition-all">a falta de percepção de valor.</span>
                                     </h2>
                                     <div className="space-y-12 max-w-2xl pt-8">
-                                        <p className="text-xl md:text-2xl leading-relaxed text-white/40 font-light hover:text-white/80 transition-colors">
+                                        <p className="text-xl md:text-2xl leading-relaxed text-[#7a7a7a] font-light hover:text-[#f0f0f0]/80 transition-colors">
                                             Muitas empresas possuem produtos ou serviços excelentes, mas falham em comunicar essa excelência no ambiente digital. Nós preenchemos essa lacuna projetando autoridade real.
                                         </p>
-                                        <a href="https://forms.gle/JBhzytiUhuHGVzNz7" target="_blank" className="inline-flex items-center gap-12 border border-white/20 px-12 py-6 rounded-full group/btn hover:bg-white hover:text-black transition-all duration-700">
+                                        <a href="https://forms.gle/JBhzytiUhuHGVzNz7" target="_blank" className="inline-flex items-center gap-12 border border-[#f0f0f0]/20 px-12 py-6 rounded-full group/btn hover:bg-[#f0f0f0] hover:text-[#0a0a0a] transition-all duration-700">
                                             <span className="text-[12px] font-black uppercase tracking-[0.4em]">ELEVE SEU VALOR AGORA</span>
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover/btn:translate-x-2 transition-transform">
                                                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
@@ -157,16 +245,16 @@
                 { id: "03", title: "Autenticidade", desc: "Comunicar sem distorcer quem você é para agradar ou seguir padrão. É isso que diferencia, gera autoridade e constrói confiança no longo prazo." }
             ];
             return (
-                <section id="como-fazemos" className="py-24 md:py-40 px-6 md:px-16 bg-white text-black border-b border-black/10">
+                <section id="como-fazemos" className="py-24 md:py-40 px-6 md:px-16 bg-[#f0f0f0] text-[#0a0a0a] border-b border-[#0a0a0a]/10">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex flex-col justify-between items-start mb-40 gap-16">
                             <div className="space-y-8">
                                 <h2 className="text-6xl md:text-8xl font-condensed uppercase leading-[0.8] tracking-tighter">Como<br />Fazemos</h2>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-black/10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#0a0a0a]/10">
                             {items.map((item) => (
-                                <div key={item.id} className="group border-r border-b border-black/10 p-16 min-h-[450px] flex flex-col justify-between hover:bg-black hover:text-white transition-all duration-700">
+                                <div key={item.id} className="group border-r border-b border-[#0a0a0a]/10 p-16 min-h-[450px] flex flex-col justify-between hover:bg-[#0a0a0a] hover:text-[#f0f0f0] transition-all duration-700">
                                     <span className="text-sm font-mono opacity-30 group-hover:opacity-50 transition-opacity">[{item.id}]</span>
                                     <div>
                                         <h4 className="text-4xl font-condensed uppercase mb-8">{item.title}</h4>
@@ -199,12 +287,12 @@
                 { id: '13', name: 'Dra. Letícia Luz', role: 'Médica referência, especialista em emagrecimento com saúde, equilíbrio e cuidado.', link: 'https://www.instagram.com/draleticia.luz/' }
             ];
             return (
-                <section id="projetos" className="py-24 md:py-40 px-6 md:px-16 border-b border-white/10 bg-black relative overflow-hidden">
+                <section id="projetos" className="py-24 md:py-40 px-6 md:px-16 border-b border-[#f0f0f0]/10 bg-[#0a0a0a] relative overflow-hidden">
                     <div className="max-w-7xl mx-auto">
                         <h2 className="text-6xl md:text-8xl font-condensed uppercase leading-[0.85] max-w-4xl mb-40">Projetos já gerenciados pela P7</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                             {list.map((item) => (
-                                <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer" className="group relative border border-white/10 aspect-square p-8 md:p-12 flex flex-col justify-between hover:bg-white text-white hover:text-black transition-colors duration-700 overflow-hidden cursor-pointer">
+                                <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer" className="group relative border border-[#f0f0f0]/10 aspect-square p-8 md:p-12 flex flex-col justify-between hover:bg-[#f0f0f0] text-[#f0f0f0] hover:text-[#0a0a0a] transition-colors duration-700 overflow-hidden cursor-pointer">
                                     <div className="flex justify-between items-start">
                                         <span className="text-xl font-condensed opacity-30 group-hover:opacity-100 transition-opacity">{item.id}</span>
                                         <div className="w-12 h-12 rounded-full border border-current flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-50 group-hover:scale-100">
@@ -215,7 +303,7 @@
                                     </div>
                                     <div className="mt-8">
                                         <h3 className="text-4xl md:text-5xl font-condensed uppercase tracking-tighter leading-[0.85] mb-6">{item.name}</h3>
-                                        <div className="h-px w-0 group-hover:w-full bg-black/20 transition-all duration-700 mb-6"></div>
+                                        <div className="h-px w-0 group-hover:w-full bg-[#0a0a0a]/20 transition-all duration-700 mb-6"></div>
                                         <p className="text-sm italic font-medium leading-relaxed opacity-60 group-hover:opacity-100 transition-opacity duration-500 line-clamp-3">{item.role}</p>
                                     </div>
                                 </a>
@@ -227,24 +315,24 @@
         };
 
         const AboutPedro = () => (
-            <section className="py-24 md:py-40 px-6 md:px-16 bg-black text-white border-b border-white/10 overflow-hidden relative">
+            <section className="py-24 md:py-40 px-6 md:px-16 bg-[#0a0a0a] text-[#f0f0f0] border-b border-[#f0f0f0]/10 overflow-hidden relative">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
                     <div className="lg:col-span-5">
                         <h2 className="text-5xl md:text-[10vw] font-condensed uppercase leading-[0.8] tracking-tighter">Pedro<br />Poubel</h2>
-                        <img src="./P7-1.JPG" alt="Pedro Poubel" className="mt-8 w-full grayscale hover:grayscale-0 transition-all duration-700 object-cover border border-white/10" />
-                        <p className="text-xs uppercase font-bold tracking-[0.3em] text-white/40 leading-relaxed border-l border-white/10 pl-8">
+                        <img src="./P7-1.JPG" alt="Pedro Poubel" className="mt-8 w-full grayscale hover:grayscale-0 transition-all duration-700 object-cover border border-[#f0f0f0]/10" />
+                        <p className="text-xs uppercase font-bold tracking-[0.3em] text-[#7a7a7a] leading-relaxed border-l border-[#f0f0f0]/10 pl-8">
                             FUNDADOR DA P7
                         </p>
                     </div>
                     <div className="lg:col-span-7">
                         <div className="space-y-8 md:space-y-10">
-                            <div className="space-y-6 md:space-y-8 text-white/50 leading-relaxed text-base md:text-lg max-w-2xl font-light">
+                            <div className="space-y-6 md:space-y-8 text-[#7a7a7a] leading-relaxed text-base md:text-lg max-w-2xl font-light">
                                 <p>Pedro Poubel é o fundador da marca P7.<br />A P7 nasce para ser uma extensão da vida de Pedro Poubel. Ela é feita para trazer ao mercado sua visão de mundo e seus princípios, aplicados em diferentes setores.</p>
                                 <p>Atua estruturando marcas e projetos que desejam se comunicar com clareza e estratégia no ambiente digital, usando o espaço como ferramenta de escala em seu negócio.</p>
                                 <p>Seu trabalho integra estratégia, conteúdo e modelo de negócio, com uma metodologia que foca em transformar conhecimento técnico em narrativa, garantindo que a excelência do cliente seja traduzida em posicionamento de excelência no mercado digital.</p>
                             </div>
                             <div className="pt-8">
-                                <a href="https://www.instagram.com/poubel7/" target="_blank" className="inline-flex items-center gap-6 border border-white/20 px-8 py-4 rounded-full group hover:bg-white hover:text-black transition-all duration-700">
+                                <a href="https://www.instagram.com/poubel7/" target="_blank" className="inline-flex items-center gap-6 border border-[#f0f0f0]/20 px-8 py-4 rounded-full group hover:bg-[#f0f0f0] hover:text-[#0a0a0a] transition-all duration-700">
                                     <span className="text-[10px] uppercase font-bold tracking-[0.3em]">Seguir no Instagram</span>
                                 </a>
                             </div>
@@ -255,25 +343,25 @@
         );
 
         const Testimonials = () => (
-            <section className="py-24 md:py-40 px-6 md:px-16 bg-black border-b border-white/10">
+            <section className="py-24 md:py-40 px-6 md:px-16 bg-[#0a0a0a] border-b border-[#f0f0f0]/10">
                 <div className="max-w-7xl mx-auto">
-                    <p className="text-[11px] uppercase font-bold text-white/40 mb-16 tracking-[0.5em] text-center">Reconhecimento de Mercado</p>
+                    <p className="text-[11px] uppercase font-bold text-[#7a7a7a] mb-16 tracking-[0.5em] text-center">Reconhecimento de Mercado</p>
                     <h2 className="text-5xl md:text-8xl font-condensed uppercase leading-none text-center mb-32">
                         O que dizem<br />sobre a P7
                     </h2>
                     <div className="space-y-48">
                         <div className="max-w-5xl mx-auto group">
-                            <p className="text-2xl md:text-[3vw] font-light leading-tight text-white/70 group-hover:text-white transition-all duration-700">"O Pedro, da agência P7, é daqueles talentos raros. Quando nos encontramos on-line, a sintonia foi imediata. Ele captou com precisão o que eu buscava para minhas redes - meu modo de expressão, minha interação e a essência do que desejo transmitir ao meu público."</p>
-                            <div className="mt-16 pt-16 border-t border-white/10">
+                            <p className="text-2xl md:text-[3vw] font-light leading-tight text-[#7a7a7a] group-hover:text-[#f0f0f0] transition-all duration-700">"O Pedro, da agência P7, é daqueles talentos raros. Quando nos encontramos on-line, a sintonia foi imediata. Ele captou com precisão o que eu buscava para minhas redes - meu modo de expressão, minha interação e a essência do que desejo transmitir ao meu público."</p>
+                            <div className="mt-16 pt-16 border-t border-[#f0f0f0]/10">
                                 <h4 className="text-4xl font-bold uppercase tracking-tight">Martina Bugs</h4>
-                                <p className="text-[10px] uppercase text-white/40 tracking-[0.4em] mt-3">Mentora de marcas, com vivência de +30 anos no mercado do luxo</p>
+                                <p className="text-[10px] uppercase text-[#7a7a7a] tracking-[0.4em] mt-3">Mentora de marcas, com vivência de +30 anos no mercado do luxo</p>
                             </div>
                         </div>
                         <div className="max-w-5xl mx-auto group text-right">
-                            <p className="text-2xl md:text-[3vw] font-light leading-tight text-white/70 group-hover:text-white transition-all duration-700">"Pedro, gostaria de dizer que estou muito feliz com o seu trabalho. Você soube captar a nossa história, nossos desejos e está transmitindo isso nas suas postagens de uma forma criativa e profissional."</p>
-                            <div className="mt-16 pt-16 border-t border-white/10">
+                            <p className="text-2xl md:text-[3vw] font-light leading-tight text-[#7a7a7a] group-hover:text-[#f0f0f0] transition-all duration-700">"Pedro, gostaria de dizer que estou muito feliz com o seu trabalho. Você soube captar a nossa história, nossos desejos e está transmitindo isso nas suas postagens de uma forma criativa e profissional."</p>
+                            <div className="mt-16 pt-16 border-t border-[#f0f0f0]/10">
                                 <h4 className="text-4xl font-bold uppercase tracking-tight">Mariane Junqueira</h4>
-                                <p className="text-[10px] uppercase text-white/40 tracking-[0.4em] mt-3">Mentora de marcas, com vivência de +30 anos no mercado do luxo</p>
+                                <p className="text-[10px] uppercase text-[#7a7a7a] tracking-[0.4em] mt-3">Mentora de marcas, com vivência de +30 anos no mercado do luxo</p>
                             </div>
                         </div>
                     </div>
@@ -290,9 +378,9 @@
             ];
 
             return (
-                <section className="py-72 px-6 md:px-16 bg-white text-black border-b border-white/10 overflow-hidden relative group/vision">
+                <section className="py-72 px-6 md:px-16 bg-[#f0f0f0] text-[#0a0a0a] border-b border-[#f0f0f0]/10 overflow-hidden relative group/vision">
                     <div className="max-w-7xl mx-auto relative z-10">
-                        <p className="text-[12px] uppercase font-[900] mb-24 opacity-40 tracking-[0.6em] flex items-center gap-8"><span className="w-16 h-px bg-black/20"></span> Visão Estratégica</p>
+                        <p className="text-[12px] uppercase font-[900] mb-24 opacity-40 tracking-[0.6em] flex items-center gap-8"><span className="w-16 h-px bg-[#0a0a0a]/20"></span> Visão Estratégica</p>
                         <div className="flex flex-col gap-8">
                             {items.map((item, index) => (
                                 <div 
@@ -301,11 +389,11 @@
                                     onMouseLeave={() => setHoveredIndex(null)}
                                     className="flex items-center gap-12 group/word cursor-default"
                                 >
-                                    <h2 className={`text-[13vw] font-condensed leading-[0.8] uppercase tracking-tighter transition-all duration-700 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10 scale-[0.98] blur-[2px]' : 'opacity-100'} ${hoveredIndex === index ? 'text-transparent [-webkit-text-stroke:1px_black]' : 'text-black'}`}>
+                                    <h2 className={`text-[13vw] font-condensed leading-[0.8] uppercase tracking-tighter transition-all duration-700 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10 scale-[0.98] blur-[2px]' : 'opacity-100'} ${hoveredIndex === index ? 'text-transparent [-webkit-text-stroke:1px_#0a0a0a]' : 'text-[#0a0a0a]'}`}>
                                         {item.word}
                                     </h2>
                                     <div className={`hidden lg:block transition-all duration-700 overflow-hidden ${hoveredIndex === index ? 'max-w-[1200px] opacity-100 translate-x-0' : 'max-w-0 opacity-0 -translate-x-12'}`}>
-                                        <p className="text-[11px] uppercase font-black tracking-[0.4em] border-l-4 border-black pl-8 pr-12 leading-relaxed">
+                                        <p className="text-[11px] uppercase font-black tracking-[0.4em] border-l-4 border-[#0a0a0a] pl-8 pr-12 leading-relaxed">
                                             <span className="mr-4 opacity-20">|</span> {item.desc}
                                         </p>
                                     </div>
@@ -326,23 +414,244 @@
 
         const Services = () => {
             const list = [
-                { id: '01', title: 'CREA7OR', desc: 'Um plano de ação prático para você parar de postar sem direção e começar a construir consistência de verdade. Você organiza sua linha editorial, entende o que comunicar e cria uma base sólida para gerar resultado.' },
+                { id: '01', title: 'POS7URE', desc: 'Uma imersão ao vivo onde a sua marca se torna atrativa no digital: com clareza de negócio, posicionamento de valor e autenticidade. Ele resolve o maior problema de quem está no digital: ter um projeto bom, mas que não é percebido, não atrai os clientes certos e não converte em faturamento real. A entrega acontece em uma sala online com Pedro Poubel, onde cada participante sai com o posicionamento definido, a marca estruturada e tudo pronto para crescer.' },
                 { id: '02', title: 'MOV7', desc: 'Uma assessoria completa onde entramos em todos os pilares do seu projeto para construir crescimento de verdade. Trabalhamos no branding, posicionamento, conteúdo, produtos, ofertas e funil de vendas de forma integrada. Um plano organizado para o crescimento do seu projeto no ambiente digital.' }
             ];
             return (
-                <section id="produtos" className="py-24 md:py-40 px-6 md:px-16 bg-black text-white border-b border-white/10 relative overflow-hidden">
+                <section id="produtos" className="py-24 md:py-40 px-6 md:px-16 bg-[#0a0a0a] text-[#f0f0f0] border-b border-[#f0f0f0]/10 relative overflow-hidden">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-6xl md:text-8xl font-condensed uppercase leading-[0.8] mb-24 md:mb-48">Produtos<br />& Soluções</h2>
+                        <h2 className="text-6xl md:text-8xl font-condensed uppercase leading-[0.8] mb-24 md:mb-48">Produtos<br />&amp; Soluções</h2>
                         <div className="flex flex-col">
                             {list.map((s) => (
-                                <div key={s.id} className="group border-b border-white/10 py-24 flex flex-col lg:flex-row justify-between items-start lg:items-center hover:px-20 hover:bg-white/5 transition-all duration-700 relative overflow-hidden">
+                                <div key={s.id} className="group border-b border-[#f0f0f0]/10 py-24 flex flex-col lg:flex-row justify-between items-start lg:items-center hover:px-20 hover:bg-[#f0f0f0]/5 transition-all duration-700 relative overflow-hidden">
                                     <div className="flex items-center gap-20">
                                         <span className="text-3xl font-mono opacity-20 group-hover:opacity-100 transition-all">[{s.id}]</span>
                                         <h3 className="text-5xl md:text-[7vw] font-condensed uppercase tracking-tighter transition-all duration-700">{s.title}</h3>
                                     </div>
-                                    <p className="text-xl opacity-40 group-hover:opacity-100 max-w-xl transition-all">{s.desc}</p>
+                                    <p className="text-xl opacity-40 group-hover:opacity-100 max-w-xl transition-all mt-8 lg:mt-0">{s.desc}</p>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        /* ========== LEVELS SECTION — Interactive & Dynamic ========== */
+        const Levels = () => {
+            const [activeLevel, setActiveLevel] = useState(null);
+            const [visibleLevels, setVisibleLevels] = useState([]);
+            const sectionRef = useRef(null);
+
+            const levels = [
+                {
+                    num: 0,
+                    title: "O Início da Jornada",
+                    desc: "Você é um profissional com desejo de construir uma marca que transmita autoridade, valor e autenticidade. Acumula conhecimento, mas ainda não construiu o que deseja."
+                },
+                {
+                    num: 1,
+                    title: "Clareza no Posicionamento",
+                    desc: "Você construiu clareza no posicionamento e agora sabe o que entrega e para quem entrega. Isso está claro para você e para seu cliente. Dessa forma, você atrai o cliente certo e se torna autêntico no mercado."
+                },
+                {
+                    num: 2,
+                    title: "Digital como Ativo",
+                    desc: "O digital está se tornando um ativo em seu negócio. Você está aparecendo mais para seu cliente ideal e está construindo um relacionamento de conexão com ele. Agora, você se torna a primeira opção na mente dele. Esse cliente sabe que precisa de você."
+                },
+                {
+                    num: 3,
+                    title: "Consolidação Digital",
+                    desc: "Seu projeto se consolidou no digital. Agora você está construindo produtos que resolvam a dor e o desejo real do seu cliente, porque agora você aprendeu a ouvir ele. Você o entende e sabe o que ele realmente precisa."
+                },
+                {
+                    num: 4,
+                    title: "Escala",
+                    desc: "Chegou a hora de escalar. Seus produtos já foram validados e muitas pessoas estão sendo transformadas através dele. Você precisa entender formas de atingir mais pessoas para gerar mais resultado."
+                },
+                {
+                    num: 5,
+                    title: "Comunidade",
+                    desc: "Seu cliente merece o melhor. Aqui ele está apaixonado em seu projeto e você começa a construir uma comunidade fiel aos princípios, valores e rituais da sua marca. Você está trabalhando para que ele se sinta pertencente a esse movimento e nunca mais queira sair."
+                },
+                {
+                    num: 6,
+                    title: "Gestão & Solidez",
+                    desc: "Você precisa administrar melhor o crescimento do seu negócio. Aqui você está entendendo como melhorar a gestão, reduzir custos, aumentar a qualidade, elevar ROI e construir um negócio com solidez."
+                },
+                {
+                    num: 7,
+                    title: "Excelência Máxima",
+                    desc: "Em toda cultura, em toda tradição, o 7 representa o ciclo completo. A perfeição. O que foi levado até o fim com excelência. Você atingiu o nível máximo de seu negócio e agora construiu uma marca com excelência, autenticidade e valor."
+                }
+            ];
+
+            useEffect(() => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                const idx = parseInt(entry.target.dataset.level);
+                                setVisibleLevels(prev => {
+                                    if (!prev.includes(idx)) return [...prev, idx];
+                                    return prev;
+                                });
+                            }
+                        });
+                    },
+                    { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+                );
+
+                const cards = document.querySelectorAll('.level-observe');
+                cards.forEach(card => observer.observe(card));
+
+                return () => observer.disconnect();
+            }, []);
+
+            return (
+                <section id="levels" className="py-24 md:py-40 px-6 md:px-16 bg-[#0a0a0a] text-[#f0f0f0] border-b border-[#f0f0f0]/10 relative overflow-hidden" ref={sectionRef}>
+                    {/* Background decorative elements */}
+                    <div className="absolute inset-0 pointer-events-none">
+                        <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] stardust"></div>
+                        <div className="absolute top-1/3 right-0 w-[600px] h-[600px] rounded-full bg-[#f0f0f0] opacity-[0.01] blur-[200px]"></div>
+                        <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full bg-[#f0f0f0] opacity-[0.01] blur-[150px]"></div>
+                    </div>
+
+                    <div className="max-w-7xl mx-auto relative z-10">
+                        {/* Section Header */}
+                        <div className="text-center mb-24 md:mb-40">
+                            <p className="text-[11px] uppercase font-bold text-[#7a7a7a] mb-8 tracking-[0.5em]">Metodologia P7</p>
+                            <h2 className="text-5xl md:text-7xl lg:text-[8vw] font-condensed uppercase leading-[0.82] tracking-tighter mb-12">
+                                Em qual <span className="italic font-light text-[#7a7a7a]">level</span><br />você está?
+                            </h2>
+                            <p className="text-lg md:text-xl text-[#7a7a7a] max-w-3xl mx-auto font-light leading-relaxed">
+                                Cada nível representa um estágio real do seu negócio no digital. Descubra onde você está hoje — e até onde você pode chegar.
+                            </p>
+                        </div>
+
+                        {/* Progress Bar */}
+                        <div className="hidden lg:flex items-center justify-between mb-20 px-4">
+                            <div className="relative w-full h-[2px] bg-[#f0f0f0]/10 progress-track rounded-full">
+                                <div 
+                                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#7a7a7a] to-[#f0f0f0] rounded-full transition-all duration-1000 ease-out"
+                                    style={{ width: activeLevel !== null ? `${(activeLevel / 7) * 100}%` : '0%' }}
+                                ></div>
+                                {levels.map((level) => (
+                                    <button
+                                        key={level.num}
+                                        onClick={() => setActiveLevel(activeLevel === level.num ? null : level.num)}
+                                        className={`absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-2 flex items-center justify-center text-[10px] font-black transition-all duration-500 cursor-pointer ${
+                                            activeLevel === level.num 
+                                                ? 'bg-[#f0f0f0] text-[#0a0a0a] border-[#f0f0f0] scale-125' 
+                                                : activeLevel !== null && level.num <= activeLevel
+                                                    ? 'bg-[#7a7a7a] text-[#0a0a0a] border-[#7a7a7a]'
+                                                    : 'bg-[#0a0a0a] text-[#7a7a7a] border-[#7a7a7a]/30 hover:border-[#f0f0f0]/50 hover:scale-110'
+                                        }`}
+                                        style={{ left: `${(level.num / 7) * 100}%`, transform: `translateX(-50%) translateY(-50%) ${activeLevel === level.num ? 'scale(1.25)' : ''}` }}
+                                    >
+                                        {level.num}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Level Cards */}
+                        <div className="relative">
+                            {/* Vertical timeline line (mobile/tablet) */}
+                            <div className="absolute left-[19px] md:left-[23px] lg:left-[27px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#f0f0f0]/10 to-transparent pointer-events-none"></div>
+
+                            <div className="space-y-4 md:space-y-6">
+                                {levels.map((level, index) => {
+                                    const isVisible = visibleLevels.includes(index);
+                                    const isActive = activeLevel === level.num;
+                                    const isLast = level.num === 7;
+
+                                    return (
+                                        <div
+                                            key={level.num}
+                                            data-level={index}
+                                            className={`level-observe level-card flex items-start gap-6 md:gap-10 cursor-pointer ${isActive ? 'level-active' : ''}`}
+                                            style={{
+                                                opacity: isVisible ? 1 : 0,
+                                                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                                                transition: `all 0.8s cubic-bezier(0.23, 1, 0.32, 1) ${index * 0.08}s`
+                                            }}
+                                            onClick={() => setActiveLevel(isActive ? null : level.num)}
+                                        >
+                                            {/* Level Number */}
+                                            <div className={`level-number flex-shrink-0 w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full border-2 flex items-center justify-center font-montserrat font-[900] text-sm md:text-base lg:text-lg relative z-10 ${
+                                                isActive 
+                                                    ? 'bg-[#f0f0f0] text-[#0a0a0a] border-[#f0f0f0]' 
+                                                    : isLast 
+                                                        ? 'border-[#f0f0f0]/40 text-[#f0f0f0]/60' 
+                                                        : 'border-[#7a7a7a]/30 text-[#7a7a7a]'
+                                            }`}>
+                                                {level.num}
+                                            </div>
+
+                                            {/* Level Content */}
+                                            <div className={`level-content flex-1 border ${isActive ? 'border-[#f0f0f0]/20 bg-[#f0f0f0]/[0.03]' : isLast ? 'border-[#f0f0f0]/10' : 'border-[#f0f0f0]/5'} rounded-none p-6 md:p-8 lg:p-10 relative overflow-hidden group`}>
+                                                {/* Decorative corner */}
+                                                {isLast && (
+                                                    <div className="absolute top-0 right-0 w-16 h-16">
+                                                        <div className="absolute top-0 right-0 w-full h-full border-t border-r border-[#f0f0f0]/20"></div>
+                                                        <div className="absolute top-2 right-2 text-[8px] font-black tracking-[0.3em] text-[#f0f0f0]/20 uppercase">Max</div>
+                                                    </div>
+                                                )}
+
+                                                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-12">
+                                                    <div className="flex-1">
+                                                        <div className="flex items-center gap-4 mb-3">
+                                                            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#7a7a7a]">Level {level.num}</span>
+                                                            <div className={`level-line h-[1px] bg-[#7a7a7a]/30 ${isActive ? '!w-20 !bg-[#f0f0f0]' : 'w-10'}`}></div>
+                                                            {isLast && <span className="text-[9px] font-black uppercase tracking-[0.4em] text-[#f0f0f0]/30 border border-[#f0f0f0]/10 px-3 py-1">Ciclo Completo</span>}
+                                                        </div>
+                                                        <h3 className={`text-2xl md:text-3xl lg:text-4xl font-condensed uppercase tracking-tighter mb-4 transition-colors duration-500 ${isActive ? 'text-[#f0f0f0]' : isLast ? 'text-[#f0f0f0]/80' : 'text-[#f0f0f0]/70'}`}>
+                                                            {level.title}
+                                                        </h3>
+                                                    </div>
+                                                </div>
+
+                                                {/* Expandable description */}
+                                                <div 
+                                                    className="overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                                                    style={{ 
+                                                        maxHeight: isActive ? '300px' : '0px',
+                                                        opacity: isActive ? 1 : 0,
+                                                        marginTop: isActive ? '16px' : '0px'
+                                                    }}
+                                                >
+                                                    <div className="border-t border-[#f0f0f0]/10 pt-6">
+                                                        <p className="level-desc text-base md:text-lg text-[#7a7a7a] leading-relaxed font-light max-w-3xl">
+                                                            {level.desc}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* CTA Final */}
+                        <div className="mt-24 md:mt-40 text-center">
+                            <div className="max-w-2xl mx-auto mb-16">
+                                <p className="text-xl md:text-2xl lg:text-3xl text-[#7a7a7a] font-light leading-relaxed">
+                                    Independente do level em que você está — existe um <span className="text-[#f0f0f0] font-medium">próximo passo</span>. E a P7 foi construída para te levar até ele.
+                                </p>
+                            </div>
+                            <a 
+                                href="https://forms.gle/JBhzytiUhuHGVzNz7" 
+                                target="_blank"
+                                className="inline-flex items-center gap-8 bg-[#f0f0f0] text-[#0a0a0a] px-12 md:px-16 py-6 md:py-7 rounded-full font-black uppercase text-[11px] md:text-[12px] tracking-[0.4em] transition-all duration-700 hover:scale-105 active:scale-95 group"
+                                style={{ animation: 'ctaGlow 3s ease-in-out infinite' }}
+                            >
+                                <span>QUERO SUBIR DE LEVEL</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform duration-500">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -359,7 +668,7 @@
                 { id: "05", title: "No Funil de Vendas", items: ["Jornada do cliente estruturada", "Processo de conversão definido", "Base para aumento de vendas"] }
             ];
             return (
-                <section id="entregas" className="py-24 md:py-40 px-6 md:px-16 bg-black text-white border-b border-white/10 relative overflow-hidden">
+                <section id="entregas" className="py-24 md:py-40 px-6 md:px-16 bg-[#0a0a0a] text-[#f0f0f0] border-b border-[#f0f0f0]/10 relative overflow-hidden">
                     <div className="max-w-7xl mx-auto">
                         <div className="mb-24 md:mb-32">
                             <h2 className="text-5xl md:text-8xl font-condensed uppercase tracking-tighter leading-[0.85] max-w-4xl">
@@ -368,7 +677,7 @@
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8">
                             {deliverables.map((item, index) => (
-                                <div key={item.id} className={`group border border-white/10 p-8 md:p-12 hover:bg-white hover:text-black transition-all duration-700 cursor-default flex flex-col ${index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'} ${index === 4 ? 'sm:col-span-2 lg:col-span-3' : ''}`}>
+                                <div key={item.id} className={`group border border-[#f0f0f0]/10 p-8 md:p-12 hover:bg-[#f0f0f0] hover:text-[#0a0a0a] transition-all duration-700 cursor-default flex flex-col ${index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'} ${index === 4 ? 'sm:col-span-2 lg:col-span-3' : ''}`}>
                                     <div className="flex items-center gap-4 mb-10">
                                         <span className="text-xl font-mono opacity-20 group-hover:opacity-100 transition-opacity">[{item.id}]</span>
                                         <h3 className="text-3xl font-condensed uppercase tracking-tight">{item.title}</h3>
@@ -399,11 +708,11 @@
                     <Projects />
                     <AboutPedro />
                     <Testimonials />
-
+                    <Levels />
                     <Services />
                     <Expertise />
                 </main>
-                <footer className="py-24 md:py-32 px-6 md:px-16 border-t border-white/10 bg-black text-center">
+                <footer className="py-24 md:py-32 px-6 md:px-16 border-t border-[#f0f0f0]/10 bg-[#0a0a0a] text-center">
                     <div className="flex flex-col items-center mb-12 opacity-40">
                         <img src="./P7.png" alt="P7" className="h-[60px] w-auto object-contain invert" />
                     </div>
