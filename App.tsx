@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
 import ForWhom from './components/ForWhom';
 import Projects from './components/Projects';
 import AboutPedro from './components/AboutPedro';
@@ -18,9 +17,6 @@ const App: React.FC = () => {
       
       <main className="relative">
         <Hero />
-        
-        {/* Seção Sobre: Missão e Percepção de Valor */}
-        <About />
 
         {/* Seção Público: Como Fazemos */}
         <ForWhom />
