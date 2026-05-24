@@ -58,7 +58,7 @@ const App: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-20 text-[10px] uppercase font-bold tracking-[0.3em]">
             <div className="flex flex-col gap-8">
               <span className="opacity-20 border-b border-[#f0f0f0]/10 pb-4">SOCIAL</span>
-              <a href="https://www.instagram.com/p7.agency/" target="_blank" className="hover:opacity-50 transition-opacity flex items-center gap-2 group">
+              <a href="https://www.instagram.com/p7.club/" target="_blank" className="hover:opacity-50 transition-opacity flex items-center gap-2 group">
                 Instagram <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
               <a href="https://www.linkedin.com/in/pedropoubel7/" target="_blank" className="hover:opacity-50 transition-opacity flex items-center gap-2 group">

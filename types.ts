@@ -4,6 +4,7 @@ export interface ServiceItem {
   title: string;
   code: string;
   description: string;
+  highlight?: boolean;
 }
 
 export interface SectionContent {

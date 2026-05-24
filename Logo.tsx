@@ -15,11 +15,10 @@ const Logo: React.FC<LogoProps> = ({ className = '', variant = 'light', size = '
   };
 
   const currentSize = sizeClasses[size];
-  const invertClass = variant === 'light' ? 'invert' : '';
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <img src="/P7.png" alt="P7" className={`${currentSize} w-auto object-contain ${invertClass}`} />
+      <img src="/logop7.png" alt="P7" className={`${currentSize} w-auto object-contain`} />
     </div>
   );
 };
