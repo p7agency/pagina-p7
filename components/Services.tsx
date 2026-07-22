@@ -62,7 +62,7 @@ const Services: React.FC = () => {
 
         <div className="mt-32 flex justify-center">
           <a 
-            href="https://forms.gle/JBhzytiUhuHGVzNz7" 
+            href="https://wa.me/5527999572486" 
             target="_blank" 
             className="group flex flex-col items-center gap-6"
           >
