@@ -100,15 +100,21 @@ export const CLIENTS = [
   },
   {
     id: '12',
-    name: 'Entrelinhas Movimento',
+    name: 'Entre Movimentos',
     role: 'Treinamento e mentoria para marcas que desejam evoluir usando o luxo como inspiração.',
-    link: 'https://www.instagram.com/entrelinhasmovimento/'
+    link: 'https://www.instagram.com/entre3movimentos/'
   },
   {
     id: '13',
     name: 'Dra. Letícia Luz',
     role: 'Médica referência, especialista em emagrecimento com saúde, equilíbrio e cuidado.',
     link: 'https://www.instagram.com/draleticia.luz/'
+  },
+  {
+    id: '14',
+    name: 'Paulo Conegero',
+    role: 'Especialista em vendas no varejo físico e digital, criador do Método Personal Shopper, com 21 anos de experiência e mais de 50 mil profissionais treinados em 4 mil marcas.',
+    link: 'https://www.instagram.com/paulo_conegero/'
   }
 ];
 
