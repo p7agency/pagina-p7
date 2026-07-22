@@ -212,7 +212,7 @@ const Levels: React.FC = () => {
             </p>
           </div>
           <a
-            href="https://forms.gle/JBhzytiUhuHGVzNz7"
+            href="https://wa.me/5527999572486"
             target="_blank"
             className="inline-flex items-center gap-8 bg-[#f0f0f0] text-[#0a0a0a] px-12 md:px-16 py-6 md:py-7 rounded-full font-black uppercase text-[11px] md:text-[12px] tracking-[0.4em] transition-all duration-700 hover:scale-105 active:scale-95 group shadow-[0_0_30px_rgba(240,240,240,0.08)]"
           >
