@@ -24,7 +24,7 @@ const Header: React.FC = () => {
       
       <div className="flex-1 flex justify-end">
         <a 
-          href="https://forms.gle/JBhzytiUhuHGVzNz7" 
+          href="https://wa.me/5527999572486" 
           target="_blank" 
           className="border-2 border-white px-6 md:px-10 py-3 rounded-full hover:bg-white hover:text-black transition-all text-center whitespace-nowrap"
         >
