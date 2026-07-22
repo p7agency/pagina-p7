@@ -35,7 +35,7 @@ const About: React.FC = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-6 md:gap-8 items-start sm:items-center">
                   <a 
-                    href="https://forms.gle/JBhzytiUhuHGVzNz7" 
+                    href="https://wa.me/5527999572486" 
                     target="_blank" 
                     className="group/btn relative inline-flex items-center gap-6 bg-transparent border border-[#f0f0f0]/20 text-[#f0f0f0] px-8 md:px-10 py-4 md:py-5 rounded-full font-bold uppercase text-[9px] md:text-[10px] tracking-[0.3em] hover:bg-[#f0f0f0] hover:text-[#0a0a0a] transition-all duration-700 ease-out overflow-hidden"
                   >
