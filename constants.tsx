@@ -109,12 +109,6 @@ export const CLIENTS = [
     name: 'Dra. Letícia Luz',
     role: 'Médica referência, especialista em emagrecimento com saúde, equilíbrio e cuidado.',
     link: 'https://www.instagram.com/draleticia.luz/'
-  },
-  {
-    id: '14',
-    name: 'Paulo Conegero',
-    role: 'Especialista em vendas no varejo físico e digital, criador do Método Personal Shopper, com 21 anos de experiência e mais de 50 mil profissionais treinados em 4 mil marcas.',
-    link: 'https://www.instagram.com/paulo_conegero/'
   }
 ];
 
