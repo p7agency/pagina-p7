@@ -2,79 +2,67 @@ import React from 'react';
 
 const deliverables = [
   {
-    id: "01",
-    title: "No Posicionamento",
-    items: [
-      "Clareza de proposta de valor",
-      "Definição de persona e diferenciais",
-      "Estrutura de comunicação, narrativa e pilares da marca"
-    ]
+    id: '01',
+    title: 'Posicionamento',
+    items: ['Clareza de proposta de valor', 'Definição de persona e diferenciais', 'Estrutura de comunicação e pilares da marca'],
   },
   {
-    id: "02",
-    title: "No Conteúdo",
-    items: [
-      "Linha editorial definida",
-      "Roteiros e estrutura de conteúdo",
-      "Edição, postagens e análise de métricas"
-    ]
+    id: '02',
+    title: 'Conteúdo',
+    items: ['Linha editorial definida', 'Roteiros e estrutura de conteúdo', 'Edição, postagens e análise de métricas'],
   },
   {
-    id: "03",
-    title: "No Branding",
-    items: [
-      "Identidade visual alinhada",
-      "Direção criativa de imagem e vídeos",
-      "Padrão estético da marca"
-    ]
+    id: '03',
+    title: 'Branding',
+    items: ['Identidade visual alinhada', 'Direção criativa de imagem e vídeos', 'Padrão estético da marca'],
   },
   {
-    id: "04",
-    title: "Nos Produtos / Ofertas",
-    items: [
-      "Estrutura de ofertas organizada",
-      "Clareza na proposta de valor",
-      "Argumentos de venda definidos"
-    ]
+    id: '04',
+    title: 'Produtos & Ofertas',
+    items: ['Estrutura de ofertas organizada', 'Clareza na proposta de valor', 'Argumentos de venda definidos'],
   },
   {
-    id: "05",
-    title: "No Funil de Vendas",
-    items: [
-      "Jornada do cliente estruturada",
-      "Processo de conversão definido",
-      "Base para aumento de vendas"
-    ]
-  }
+    id: '05',
+    title: 'Funil de Vendas',
+    items: ['Jornada do cliente estruturada', 'Processo de conversão definido', 'Base para aumento de vendas'],
+  },
 ];
 
 const Expertise: React.FC = () => {
   return (
-    <section id="entregas" className="py-24 md:py-40 px-6 md:px-16 bg-black text-white border-b border-white/10 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-24 md:mb-32">
-          <h2 className="text-5xl md:text-8xl font-condensed uppercase tracking-tighter leading-[0.85] max-w-4xl">
-            O QUE VOCÊ VAI RECEBER COM NOSSO TRABALHO?
-          </h2>
+    <section id="entregas" className="py-24 md:py-40 px-6 md:px-16 bg-[#0a0a0a] text-[#f0f0f0] border-b border-[#f0f0f0]/10 relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
+          backgroundSize: '256px 256px',
+        }}
+      />
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-8">
+            <p className="text-[10px] uppercase tracking-[0.5em] font-black text-[#7a7a7a] mb-4">O que entregamos</p>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-condensed uppercase tracking-tighter leading-[0.82]">
+              O que você vai receber com nosso trabalho
+            </h2>
+            <div className="h-[2px] w-20 bg-gradient-to-r from-[#f0f0f0] to-transparent mt-6" />
+          </div>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#f0f0f0]/8">
           {deliverables.map((item, index) => (
-            <div 
-              key={index} 
-              className={`group border border-white/10 p-8 md:p-12 hover:bg-white hover:text-black transition-all duration-700 cursor-default flex flex-col ${
-                index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'
-              } ${index === 4 ? 'sm:col-span-2 lg:col-span-3' : ''}`}
+            <div
+              key={index}
+              className="group border-r border-b border-[#f0f0f0]/8 p-10 md:p-14 flex flex-col gap-10 hover:bg-[#f0f0f0] hover:text-[#0a0a0a] transition-all duration-700 cursor-default"
             >
-              <div className="flex items-center gap-4 mb-10">
-                <span className="text-xl font-mono opacity-20 group-hover:opacity-100 transition-opacity">[{item.id}]</span>
-                <h3 className="text-3xl font-condensed uppercase tracking-tight">{item.title}</h3>
+              <div className="flex items-center gap-5">
+                <span className="text-[10px] font-mono text-[#f0f0f0]/20 group-hover:text-[#0a0a0a]/30 transition-colors">[{item.id}]</span>
+                <div className="h-px flex-1 bg-[#f0f0f0]/10 group-hover:bg-[#0a0a0a]/15 transition-colors" />
               </div>
-              <ul className="space-y-4 opacity-60 group-hover:opacity-100 transition-opacity duration-500 flex-1">
+              <h3 className="text-3xl md:text-4xl font-condensed uppercase tracking-tighter">{item.title}</h3>
+              <ul className="space-y-4 flex-1">
                 {item.items.map((bullet, idx) => (
-                  <li key={idx} className="text-sm font-medium leading-relaxed flex items-start gap-3">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-current opacity-50 flex-shrink-0"></span>
-                    <span>{bullet}</span>
+                  <li key={idx} className="text-sm font-light leading-relaxed flex items-start gap-3 text-[#f0f0f0]/50 group-hover:text-[#0a0a0a]/60 transition-colors duration-500">
+                    <span className="mt-2 w-1 h-1 bg-current flex-shrink-0" />
+                    {bullet}
                   </li>
                 ))}
               </ul>
