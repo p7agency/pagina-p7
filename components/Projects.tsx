@@ -3,7 +3,7 @@ import { CLIENTS } from '../constants';
 
 const Projects: React.FC = () => {
   return (
-    <section id="projetos" className="py-24 md:py-40 px-6 md:px-16 border-b border-[#f0f0f0]/10 bg-[#0a0a0a] overflow-hidden">
+    <section id="projetos" className="py-24 md:py-40 px-6 md:px-16 bg-[#0a0a0a] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 md:mb-32 gap-8">
           <div>
@@ -17,18 +17,18 @@ const Projects: React.FC = () => {
             Marcas e profissionais que confiaram sua presença digital à P7.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#f0f0f0]/8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {CLIENTS.map((client) => (
             <a
               key={client.id}
               href={client.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative border-r border-b border-[#f0f0f0]/8 p-10 md:p-12 min-h-[280px] flex flex-col justify-between hover:bg-[#f0f0f0] cursor-pointer transition-colors duration-500 text-[#f0f0f0] hover:text-[#0a0a0a]"
+              className="group relative p-10 md:p-12 min-h-[280px] flex flex-col justify-between hover:bg-[#f0f0f0] cursor-pointer transition-colors duration-500 text-[#f0f0f0] hover:text-[#0a0a0a] bg-[#111111]"
             >
               <div className="flex justify-between items-start">
                 <span className="text-[10px] font-mono text-[#f0f0f0]/20 group-hover:text-[#0a0a0a]/30 transition-colors">{client.id}</span>
-                <div className="w-8 h-8 border border-[#f0f0f0]/10 group-hover:border-[#0a0a0a]/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400">
+                <div className="w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
                   </svg>
