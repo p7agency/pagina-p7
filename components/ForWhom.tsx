@@ -20,7 +20,7 @@ const items = [
 
 const ForWhom: React.FC = () => {
   return (
-    <section className="py-24 md:py-40 px-6 md:px-16 bg-[#f0f0f0] text-[#0a0a0a] border-b border-[#0a0a0a]/10 overflow-hidden">
+    <section className="py-24 md:py-40 px-6 md:px-16 bg-[#f0f0f0] text-[#0a0a0a] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-24 md:mb-32 gap-8">
           <div>
@@ -34,11 +34,11 @@ const ForWhom: React.FC = () => {
             Três pilares que sustentam cada projeto que a P7 toca.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-[#0a0a0a]/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {items.map((item, index) => (
             <div
               key={index}
-              className="group border-r border-b border-[#0a0a0a]/10 p-10 md:p-14 min-h-[380px] flex flex-col justify-between hover:bg-[#0a0a0a] transition-colors duration-700 cursor-default"
+              className="group p-10 md:p-14 min-h-[380px] flex flex-col justify-between hover:bg-[#0a0a0a] transition-colors duration-700 cursor-default bg-[#e8e8e8]"
             >
               <div className="flex justify-between items-start">
                 <span className="text-xs font-mono text-[#0a0a0a]/30 group-hover:text-[#f0f0f0]/30 transition-colors">[{item.code}]</span>
