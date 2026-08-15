@@ -2,23 +2,25 @@ import React from 'react';
 
 interface LogoProps {
   className?: string;
-  variant?: 'light' | 'dark';
   size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
-const Logo: React.FC<LogoProps> = ({ className = '', variant = 'light', size = 'md' }) => {
-  const sizeClasses = {
-    sm: 'h-[40px] md:h-[50px]',
-    md: 'h-[70px] md:h-[80px]',
-    lg: 'h-[12vw] md:h-[14vw]',
-    xl: 'h-[20vw] md:h-[24vw]'
+const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
+  const sizeMap = {
+    sm:  'h-8 md:h-10',
+    md:  'h-12 md:h-16',
+    lg:  'h-20 md:h-28',
+    xl:  'h-28 md:h-40',
   };
 
-  const currentSize = sizeClasses[size];
-
   return (
-    <div className={`flex flex-col items-center ${className}`}>
-      <img src="/logop7.png" alt="P7" className={`${currentSize} w-auto object-contain`} />
+    <div className={`flex items-center ${className}`}>
+      <img
+        src="/logop7.png"
+        alt="P7"
+        className={`${sizeMap[size]} w-auto object-contain`}
+        style={{ filter: 'brightness(0) invert(1)' }}
+      />
     </div>
   );
 };
