@@ -3,9 +3,10 @@ import React from 'react';
 interface LogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  dark?: boolean;
 }
 
-const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
+const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', dark = false }) => {
   const sizeMap = {
     sm:  'h-8 md:h-10',
     md:  'h-12 md:h-16',
@@ -19,7 +20,10 @@ const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
         src="/logop7.png"
         alt="P7"
         className={`${sizeMap[size]} w-auto object-contain`}
-        style={{ filter: 'brightness(0) invert(1)' }}
+        style={{
+          mixBlendMode: dark ? 'normal' : 'screen',
+          filter: dark ? 'invert(1)' : 'none',
+        }}
       />
     </div>
   );
