@@ -3,29 +3,33 @@ import { ServiceItem } from './types';
 export const SERVICES: ServiceItem[] = [
   { 
     id: '1', 
-    title: 'STAR7', 
+    title: 'MENTORIA P7',
     code: '01', 
-    description: 'A masterclass que revela os erros que estão travando o seu posicionamento e te mostra o caminho certo para transformar o seu Instagram em uma ferramenta real de vendas — mesmo com poucos seguidores, sem precisar postar todo dia e sem abrir mão da sua autenticidade.',
-    highlight: false
+    description: 'Você já tem experiência, resultado e conhecimento. O que falta é o mercado enxergar isso com clareza. A Mentoria P7 é onde você constrói o projeto digital que representa quem você realmente é: um posicionamento claro, uma marca que comunica valor e uma direção de conteúdo que te coloca na frente do público certo.',
+    highlight: false,
+    isMentoria: true,
+    subItems: [
+      {
+        title: 'Mentoria P7 Club — Individual',
+        description: 'Um atendimento exclusivo, feito sob medida para o seu momento. Construímos juntos o seu posicionamento, o seu branding e a sua estratégia de conteúdo, sessão a sessão, com total prioridade e dedicação ao seu caso.'
+      },
+      {
+        title: 'BASE7 — Turma',
+        description: 'Um acompanhamento de 3 meses em grupo, ao lado de outros profissionais que estão construindo o mesmo tipo de marca que você. Você constrói o seu projeto no seu ritmo, com acompanhamento constante para corrigir a rota no caminho, e networking real com quem está vivendo a mesma jornada.'
+      }
+    ]
   },
   { 
     id: '2', 
-    title: 'POS7URE', 
-    code: '02', 
-    description: 'Uma imersão ao vivo onde a sua marca se torna atrativa no digital: com clareza de negócio, posicionamento de valor e autenticidade. Ele resolve o maior problema de quem está no digital: ter um projeto bom, mas que não é percebido, não atrai os clientes certos e não converte em faturamento real. A entrega acontece em uma sala online com Pedro Poubel, onde cada participante sai com o posicionamento definido, a marca estruturada e tudo pronto para crescer.',
-    highlight: false
-  },
-  { 
-    id: '3', 
     title: 'MOV7', 
-    code: '03', 
+    code: '02', 
     description: 'Uma assessoria completa onde entramos em todos os pilares do seu projeto para construir crescimento de verdade. Trabalhamos no branding, posicionamento, conteúdo, produtos, ofertas e funil de vendas de forma integrada. Um plano organizado para o crescimento do seu projeto no ambiente digital.',
     highlight: false
   },
   { 
-    id: '4', 
+    id: '3', 
     title: 'P7 CLUB', 
-    code: '04', 
+    code: '03', 
     description: 'O Level 7 é o topo — e o P7 Club é onde ele acontece. São 12 meses de acompanhamento próximo, mentoria em grupo, IA aplicada nos processos e uma comunidade de pessoas que jogam no mais alto nível, construindo negócios com clareza estratégica, gestão e excelência real.',
     highlight: true
   }
