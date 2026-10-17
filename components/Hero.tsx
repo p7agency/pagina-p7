@@ -85,10 +85,24 @@ const Hero: React.FC = () => {
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 pt-28 md:pt-32 pb-20">
 
         {/* Topo — logo + tag */}
+        <div
+          className="mb-14 md:mb-20"
+          style={{
+            transform: `translate(${px * 0.8}px, ${py * 0.5}px)`,
+            transition: 'transform 0.6s ease-out',
+          }}
+        >
+          <img
+            src="/logos/p7-club-white.png"
+            alt="P7 Club"
+            className="w-full max-w-[920px] h-auto select-none"
+            style={{ filter: 'drop-shadow(0 30px 80px rgba(222,218,207,0.08))', animation: 'heroLogoIn 1.2s cubic-bezier(0.16,1,0.3,1) both' }}
+            draggable={false}
+          />
+        </div>
+
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-16 md:mb-20">
-          <div style={{ transform: `translate(${px * 0.8}px, ${py * 0.5}px)`, transition: 'transform 0.6s ease-out' }}>
-            <Logo size="md" />
-          </div>
+          <div className="text-[9px] uppercase font-black tracking-[0.45em] text-[#7A756F]">P7 Club</div>
           <div className="flex items-center gap-3">
             <div
               className="w-1.5 h-1.5 bg-[#f0f0f0]"
@@ -234,6 +248,10 @@ const Hero: React.FC = () => {
       </div>
 
       <style>{`
+        @keyframes heroLogoIn {
+          0% { opacity: 0; filter: blur(12px); transform: translateY(30px); }
+          100% { opacity: 1; filter: blur(0); transform: translateY(0); }
+        }
         @keyframes heroPulse {
           0%, 100% { opacity: 0.5; transform: scale(1); }
           50% { opacity: 0.9; transform: scale(1.4); }

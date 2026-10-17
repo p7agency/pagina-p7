@@ -43,7 +43,7 @@ const App: React.FC = () => {
       <footer className="py-32 px-6 md:px-16 border-t border-[#f0f0f0]/10 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
           <div className="flex flex-col gap-12">
-            <Logo size="md" />
+            <Logo size="lg" variant="bar" />
             <div className="space-y-4">
               <div className="text-[10px] uppercase tracking-[0.4em] font-black opacity-30">
                 © 2026 P7 — POSICIONAMENTO DIGITAL
