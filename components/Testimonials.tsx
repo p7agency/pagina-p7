@@ -65,34 +65,34 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="depoimentos" className="py-24 md:py-40 px-6 md:px-16 bg-[#f0f0f0] text-[#0a0a0a] overflow-hidden">
+    <section id="depoimentos" className="py-24 md:py-40 px-6 md:px-16 bg-[#DEDACF] text-[#000000] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-24 md:mb-32 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <p className="text-[10px] uppercase font-black text-[#0a0a0a]/30 mb-4 tracking-[0.5em]">Reconhecimento de Mercado</p>
+            <p className="text-[10px] uppercase font-black text-[#000000]/30 mb-4 tracking-[0.5em]">Reconhecimento de Mercado</p>
             <h2 className="text-4xl md:text-6xl font-condensed uppercase leading-[0.85] tracking-tighter">
               O que dizem<br />sobre a P7
             </h2>
-            <div className="h-[3px] w-20 bg-[#0a0a0a] mt-6" />
+            <div className="h-[3px] w-20 bg-[#000000] mt-6" />
           </div>
         </div>
         <div className="flex flex-col gap-3">
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className="group grid grid-cols-1 lg:grid-cols-12 py-10 md:py-12 px-8 md:px-12 gap-8 transition-colors duration-500 bg-[#e8e8e8] hover:bg-[#dcdcdc]"
+              className="group grid grid-cols-1 lg:grid-cols-12 py-10 md:py-12 px-8 md:px-12 gap-8 transition-colors duration-500 bg-[#FFFFFF] hover:bg-[#F3F1EC]"
             >
               <div className="lg:col-span-1 flex items-start">
-                <span className="text-sm font-mono text-[#0a0a0a]/20 mt-1">0{index + 1}</span>
+                <span className="text-sm font-mono text-[#000000]/20 mt-1">0{index + 1}</span>
               </div>
               <div className="lg:col-span-8">
-                <blockquote className="text-base md:text-lg font-light leading-relaxed text-[#0a0a0a]/75 group-hover:text-[#0a0a0a] transition-colors">
+                <blockquote className="text-base md:text-lg font-light leading-relaxed text-[#000000]/75 group-hover:text-[#000000] transition-colors">
                   "{t.text}"
                 </blockquote>
               </div>
               <div className="lg:col-span-3 flex flex-col justify-end">
                 <h4 className="text-lg font-black uppercase tracking-tight mb-2">{t.name}</h4>
-                <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#0a0a0a]/40 leading-relaxed">
+                <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#000000]/40 leading-relaxed">
                   {t.role}
                 </p>
               </div>
@@ -102,21 +102,21 @@ const Testimonials: React.FC = () => {
 
         {/* Resultados */}
         <div className="mt-20 md:mt-28">
-          <p className="text-[10px] uppercase font-black text-[#0a0a0a]/30 mb-8 tracking-[0.5em]">Resultados · Sem tráfego pago</p>
+          <p className="text-[10px] uppercase font-black text-[#000000]/30 mb-8 tracking-[0.5em]">Resultados · Sem tráfego pago</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {results.map((r) => (
               <div
                 key={r.client}
-                className="group p-8 md:p-10 bg-[#0a0a0a] text-[#f0f0f0] flex flex-col justify-between min-h-[300px] transition-transform duration-500 hover:-translate-y-1"
+                className="group p-8 md:p-10 bg-[#000000] text-[#DEDACF] flex flex-col justify-between min-h-[300px] transition-transform duration-500 hover:-translate-y-1"
               >
-                <span className="text-[10px] uppercase font-black tracking-[0.4em] text-[#f0f0f0]/40">{r.client}</span>
+                <span className="text-[10px] uppercase font-black tracking-[0.4em] text-[#DEDACF]/40">{r.client}</span>
                 <div>
                   <div className="text-6xl md:text-7xl font-black tracking-tighter leading-none mb-3">
                     {r.prefix}<CountUp end={r.value} />{r.suffix}
                   </div>
                   <p className="text-sm uppercase font-bold tracking-[0.15em] mb-6">{r.label}</p>
-                  <div className="h-px w-full bg-[#f0f0f0]/10 mb-4" />
-                  <p className="text-sm font-light text-[#f0f0f0]/50 leading-relaxed">{r.detail}</p>
+                  <div className="h-px w-full bg-[#DEDACF]/10 mb-4" />
+                  <p className="text-sm font-light text-[#DEDACF]/50 leading-relaxed">{r.detail}</p>
                 </div>
               </div>
             ))}

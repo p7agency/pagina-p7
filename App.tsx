@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ForWhom from './components/ForWhom';
@@ -11,8 +11,23 @@ import Levels from './components/Levels';
 import Logo from './Logo';
 
 const App: React.FC = () => {
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('is-visible')),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('main > section').forEach((s) => obs.observe(s));
+    const onMove = (e: MouseEvent) => {
+      document.documentElement.style.setProperty('--mx', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--my', `${e.clientY}px`);
+    };
+    window.addEventListener('mousemove', onMove);
+    return () => { obs.disconnect(); window.removeEventListener('mousemove', onMove); };
+  }, []);
+
   return (
-    <div className="min-h-screen selection:bg-[#f0f0f0] selection:text-[#0a0a0a] overflow-x-hidden bg-[#0a0a0a] text-[#f0f0f0] font-sans">
+    <div className="min-h-screen selection:bg-[#DEDACF] selection:text-[#000000] overflow-x-hidden bg-[#000000] text-[#DEDACF] font-sans">
+      <div className="p7-spot" />
       <Header />
       
       <main className="relative">
@@ -40,7 +55,7 @@ const App: React.FC = () => {
         <Expertise />
       </main>
 
-      <footer className="py-32 px-6 md:px-16 border-t border-[#f0f0f0]/10 bg-[#0a0a0a]">
+      <footer className="py-32 px-6 md:px-16 border-t border-[#DEDACF]/10 bg-[#000000]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
           <div className="flex flex-col gap-12">
             <Logo size="lg" variant="bar" />
@@ -53,7 +68,7 @@ const App: React.FC = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-20 text-[10px] uppercase font-bold tracking-[0.3em]">
             <div className="flex flex-col gap-8">
-              <span className="opacity-20 border-b border-[#f0f0f0]/10 pb-4">SOCIAL</span>
+              <span className="opacity-20 border-b border-[#DEDACF]/10 pb-4">SOCIAL</span>
               <a href="https://www.instagram.com/p7.club/" target="_blank" className="hover:opacity-50 transition-opacity flex items-center gap-2 group">
                 Instagram <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
@@ -63,7 +78,7 @@ const App: React.FC = () => {
             </div>
             
             <div className="flex flex-col gap-8">
-              <span className="opacity-20 border-b border-[#f0f0f0]/10 pb-4">ESTRUTURA</span>
+              <span className="opacity-20 border-b border-[#DEDACF]/10 pb-4">ESTRUTURA</span>
               <a href="#projetos" className="hover:opacity-50 transition-opacity">Projetos</a>
               <a href="#produtos" className="hover:opacity-50 transition-opacity">Produtos</a>
               <a href="#levels" className="hover:opacity-50 transition-opacity">Levels</a>
@@ -72,7 +87,7 @@ const App: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-32 pt-12 border-t border-[#f0f0f0]/5 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="mt-32 pt-12 border-t border-[#DEDACF]/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-[9px] uppercase tracking-[0.5em] opacity-10">DESIGNED BY P7 ARCHITECTURE</p>
           <div className="flex gap-12 opacity-10 text-[9px] uppercase font-bold tracking-widest">
             <span>Privacidade</span>

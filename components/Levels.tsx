@@ -74,32 +74,32 @@ const Levels: React.FC = () => {
     <section
       id="levels"
       ref={sectionRef}
-      className="py-24 md:py-40 px-6 md:px-16 bg-[#0a0a0a] text-[#f0f0f0] border-b border-[#f0f0f0]/10 relative overflow-hidden"
+      className="py-24 md:py-40 px-6 md:px-16 bg-[#000000] text-[#DEDACF] border-b border-[#DEDACF]/10 relative overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
-        <div className="absolute top-1/3 right-0 w-[600px] h-[600px] rounded-full bg-[#f0f0f0] opacity-[0.01] blur-[200px]"></div>
-        <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full bg-[#f0f0f0] opacity-[0.01] blur-[150px]"></div>
+        <div className="absolute top-1/3 right-0 w-[600px] h-[600px] rounded-full bg-[#DEDACF] opacity-[0.01] blur-[200px]"></div>
+        <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full bg-[#DEDACF] opacity-[0.01] blur-[150px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-24 md:mb-40">
-          <p className="text-[11px] uppercase font-bold text-[#7a7a7a] mb-8 tracking-[0.5em]">Metodologia P7</p>
+          <p className="text-[11px] uppercase font-bold text-[#7A756F] mb-8 tracking-[0.5em]">Metodologia P7</p>
           <h2 className="text-5xl md:text-7xl lg:text-[8vw] font-condensed uppercase leading-[0.82] tracking-tighter mb-12">
-            Em qual <span className="italic font-light text-[#7a7a7a]">level</span><br />você está?
+            Em qual <span className="italic font-light text-[#7A756F]">level</span><br />você está?
           </h2>
-          <p className="text-lg md:text-xl text-[#7a7a7a] max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-[#7A756F] max-w-3xl mx-auto font-light leading-relaxed">
             Cada nível representa um estágio real do seu negócio no digital. Descubra onde você está hoje — e até onde você pode chegar.
           </p>
         </div>
 
         {/* Progress Bar */}
         <div className="hidden lg:flex items-center justify-between mb-20 px-4">
-          <div className="relative w-full h-[2px] bg-[#f0f0f0]/10 rounded-full overflow-hidden">
+          <div className="relative w-full h-[2px] bg-[#DEDACF]/10 rounded-full overflow-hidden">
             <div
-              className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#7a7a7a] to-[#f0f0f0] rounded-full transition-all duration-1000 ease-out"
+              className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#7A756F] to-[#DEDACF] rounded-full transition-all duration-1000 ease-out"
               style={{ width: activeLevel !== null ? `${(activeLevel / 7) * 100}%` : '0%' }}
             ></div>
             {levelsData.map((level) => (
@@ -108,10 +108,10 @@ const Levels: React.FC = () => {
                 onClick={() => setActiveLevel(activeLevel === level.num ? null : level.num)}
                 className={`absolute top-1/2 w-8 h-8 rounded-full border-2 flex items-center justify-center text-[10px] font-black transition-all duration-500 cursor-pointer ${
                   activeLevel === level.num
-                    ? 'bg-[#f0f0f0] text-[#0a0a0a] border-[#f0f0f0] scale-125'
+                    ? 'bg-[#DEDACF] text-[#000000] border-[#DEDACF] scale-125'
                     : activeLevel !== null && level.num <= activeLevel
-                      ? 'bg-[#7a7a7a] text-[#0a0a0a] border-[#7a7a7a]'
-                      : 'bg-[#0a0a0a] text-[#7a7a7a] border-[#7a7a7a]/30 hover:border-[#f0f0f0]/50 hover:scale-110'
+                      ? 'bg-[#7A756F] text-[#000000] border-[#7A756F]'
+                      : 'bg-[#000000] text-[#7A756F] border-[#7A756F]/30 hover:border-[#DEDACF]/50 hover:scale-110'
                 }`}
                 style={{
                   left: `${(level.num / 7) * 100}%`,
@@ -127,7 +127,7 @@ const Levels: React.FC = () => {
         {/* Level Cards */}
         <div className="relative">
           {/* Vertical timeline line */}
-          <div className="absolute left-[19px] md:left-[23px] lg:left-[27px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#f0f0f0]/10 to-transparent pointer-events-none"></div>
+          <div className="absolute left-[19px] md:left-[23px] lg:left-[27px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#DEDACF]/10 to-transparent pointer-events-none"></div>
 
           <div className="space-y-4 md:space-y-6">
             {levelsData.map((level, index) => {
@@ -150,32 +150,32 @@ const Levels: React.FC = () => {
                   {/* Level Number */}
                   <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full border-2 flex items-center justify-center font-montserrat font-[900] text-sm md:text-base lg:text-lg relative z-10 transition-all duration-500 ${
                     isActive
-                      ? 'bg-[#f0f0f0] text-[#0a0a0a] border-[#f0f0f0]'
+                      ? 'bg-[#DEDACF] text-[#000000] border-[#DEDACF]'
                       : isLast
-                        ? 'border-[#f0f0f0]/40 text-[#f0f0f0]/60'
-                        : 'border-[#7a7a7a]/30 text-[#7a7a7a]'
+                        ? 'border-[#DEDACF]/40 text-[#DEDACF]/60'
+                        : 'border-[#7A756F]/30 text-[#7A756F]'
                   }`}>
                     {level.num}
                   </div>
 
                   {/* Level Content */}
-                  <div className={`flex-1 border ${isActive ? 'border-[#f0f0f0]/20 bg-[#f0f0f0]/[0.03]' : isLast ? 'border-[#f0f0f0]/10' : 'border-[#f0f0f0]/5'} p-6 md:p-8 lg:p-10 relative overflow-hidden group transition-all duration-500 hover:translate-x-3`}>
+                  <div className={`flex-1 border ${isActive ? 'border-[#DEDACF]/20 bg-[#DEDACF]/[0.03]' : isLast ? 'border-[#DEDACF]/10' : 'border-[#DEDACF]/5'} p-6 md:p-8 lg:p-10 relative overflow-hidden group transition-all duration-500 hover:translate-x-3`}>
                     {/* Decorative corner for Level 7 */}
                     {isLast && (
                       <div className="absolute top-0 right-0 w-16 h-16">
-                        <div className="absolute top-0 right-0 w-full h-full border-t border-r border-[#f0f0f0]/20"></div>
-                        <div className="absolute top-2 right-2 text-[8px] font-black tracking-[0.3em] text-[#f0f0f0]/20 uppercase">Max</div>
+                        <div className="absolute top-0 right-0 w-full h-full border-t border-r border-[#DEDACF]/20"></div>
+                        <div className="absolute top-2 right-2 text-[8px] font-black tracking-[0.3em] text-[#DEDACF]/20 uppercase">Max</div>
                       </div>
                     )}
 
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-12">
                       <div className="flex-1">
                         <div className="flex items-center gap-4 mb-3">
-                          <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#7a7a7a]">Level {level.num}</span>
-                          <div className={`h-[1px] transition-all duration-700 ${isActive ? 'w-20 bg-[#f0f0f0]' : 'w-10 bg-[#7a7a7a]/30'}`}></div>
-                          {isLast && <span className="text-[9px] font-black uppercase tracking-[0.4em] text-[#f0f0f0]/30 border border-[#f0f0f0]/10 px-3 py-1">Ciclo Completo</span>}
+                          <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#7A756F]">Level {level.num}</span>
+                          <div className={`h-[1px] transition-all duration-700 ${isActive ? 'w-20 bg-[#DEDACF]' : 'w-10 bg-[#7A756F]/30'}`}></div>
+                          {isLast && <span className="text-[9px] font-black uppercase tracking-[0.4em] text-[#DEDACF]/30 border border-[#DEDACF]/10 px-3 py-1">Ciclo Completo</span>}
                         </div>
-                        <h3 className={`text-2xl md:text-3xl lg:text-4xl font-condensed uppercase tracking-tighter mb-4 transition-colors duration-500 ${isActive ? 'text-[#f0f0f0]' : isLast ? 'text-[#f0f0f0]/80' : 'text-[#f0f0f0]/70'}`}>
+                        <h3 className={`text-2xl md:text-3xl lg:text-4xl font-condensed uppercase tracking-tighter mb-4 transition-colors duration-500 ${isActive ? 'text-[#DEDACF]' : isLast ? 'text-[#DEDACF]/80' : 'text-[#DEDACF]/70'}`}>
                           {level.title}
                         </h3>
                       </div>
@@ -191,8 +191,8 @@ const Levels: React.FC = () => {
                         transition: 'all 0.7s cubic-bezier(0.23, 1, 0.32, 1)'
                       }}
                     >
-                      <div className="border-t border-[#f0f0f0]/10 pt-6">
-                        <p className="text-base md:text-lg text-[#7a7a7a] leading-relaxed font-light max-w-3xl">
+                      <div className="border-t border-[#DEDACF]/10 pt-6">
+                        <p className="text-base md:text-lg text-[#7A756F] leading-relaxed font-light max-w-3xl">
                           {level.desc}
                         </p>
                       </div>
@@ -207,14 +207,14 @@ const Levels: React.FC = () => {
         {/* CTA Final */}
         <div className="mt-24 md:mt-40 text-center">
           <div className="max-w-2xl mx-auto mb-16">
-            <p className="text-xl md:text-2xl lg:text-3xl text-[#7a7a7a] font-light leading-relaxed">
-              Independente do level em que você está — existe um <span className="text-[#f0f0f0] font-medium">próximo passo</span>. E a P7 foi construída para te levar até ele.
+            <p className="text-xl md:text-2xl lg:text-3xl text-[#7A756F] font-light leading-relaxed">
+              Independente do level em que você está — existe um <span className="text-[#DEDACF] font-medium">próximo passo</span>. E a P7 foi construída para te levar até ele.
             </p>
           </div>
           <a
             href="https://wa.me/5527999572486"
             target="_blank"
-            className="inline-flex items-center gap-8 bg-[#f0f0f0] text-[#0a0a0a] px-12 md:px-16 py-6 md:py-7 rounded-full font-black uppercase text-[11px] md:text-[12px] tracking-[0.4em] transition-all duration-700 hover:scale-105 active:scale-95 group shadow-[0_0_30px_rgba(240,240,240,0.08)]"
+            className="inline-flex items-center gap-8 bg-[#DEDACF] text-[#000000] px-12 md:px-16 py-6 md:py-7 rounded-full font-black uppercase text-[11px] md:text-[12px] tracking-[0.4em] transition-all duration-700 hover:scale-105 active:scale-95 group shadow-[0_0_30px_rgba(222,218,207,0.08)]"
           >
             <span>QUERO SUBIR DE LEVEL</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform duration-500">

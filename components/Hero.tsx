@@ -77,9 +77,9 @@ const Hero: React.FC = () => {
             draggable={false}
             className="w-full max-w-[760px] h-auto select-none"
             style={{
-              transform: `rotateY(${mouse.x * 10}deg) rotateX(${-mouse.y * 8}deg) translateZ(0)`,
+              transform: `rotateY(${mouse.x * 10}deg) rotateX(${-mouse.y * 8}deg)`,
               transition: 'transform 0.25s ease-out',
-              filter: `drop-shadow(${-mouse.x * 20}px ${-mouse.y * 20 + 30}px 60px rgba(222,218,207,0.12))`,
+              opacity: 1,
               animation: 'heroLogoIn 1.2s cubic-bezier(0.16,1,0.3,1) both',
             }}
           />
@@ -146,7 +146,7 @@ const Hero: React.FC = () => {
       </div>
 
       <style>{`
-        @keyframes heroLogoIn { 0% { opacity: 0; filter: blur(14px); } 100% { opacity: 1; } }
+        @keyframes heroLogoIn { 0% { opacity: 0; scale: 0.94; } 100% { opacity: 1; scale: 1; } }
         @keyframes heroFade { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
         @keyframes heroPulse { 0%,100% { opacity: .4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.5); } }
         @keyframes heroScroll { 0%,100% { opacity: .2; transform: scaleY(.6); } 50% { opacity: 1; transform: scaleY(1); } }

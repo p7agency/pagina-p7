@@ -10,14 +10,14 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-4 md:px-16 py-5 flex justify-between items-center uppercase text-[9px] md:text-[10px] tracking-widest font-black bg-[#050505]/90 backdrop-blur-sm border-b border-[#f0f0f0]/5">
+    <nav className="fixed top-0 left-0 w-full z-50 px-4 md:px-16 py-5 flex justify-between items-center uppercase text-[9px] md:text-[10px] tracking-widest font-black bg-[#000000]/90 backdrop-blur-sm border-b border-[#DEDACF]/5">
       <div className="flex-1">
         <a href="#">
           <Logo size="sm" />
         </a>
       </div>
 
-      <div className="hidden lg:flex gap-12 flex-1 justify-center text-[#f0f0f0]/50 hover:[&>a]:text-[#f0f0f0] [&>a]:transition-colors">
+      <div className="hidden lg:flex gap-12 flex-1 justify-center text-[#DEDACF]/50 hover:[&>a]:text-[#DEDACF] [&>a]:transition-colors">
         {navItems.map((item) => (
           <a key={item.label} href={item.href}>
             {item.label}
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
         <a
           href="https://wa.me/5527999572486"
           target="_blank"
-          className="border border-[#f0f0f0]/20 px-6 md:px-8 py-2.5 hover:bg-[#f0f0f0] hover:text-[#0a0a0a] hover:border-[#f0f0f0] transition-all text-center whitespace-nowrap text-[#f0f0f0]"
+          className="border border-[#DEDACF]/20 px-6 md:px-8 py-2.5 hover:bg-[#DEDACF] hover:text-[#000000] hover:border-[#DEDACF] transition-all text-center whitespace-nowrap text-[#DEDACF]"
         >
           CONECTAR
         </a>
