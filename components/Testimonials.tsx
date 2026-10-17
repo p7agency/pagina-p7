@@ -1,5 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+const beforeAfter = [
+  { client: 'Rauan Pablo', before: '/cases/rauan-antes.jpg', after: '/cases/rauan-depois.png' },
+  { client: 'Rolê com Rapha', before: '/cases/rcr-antes.png', after: '/cases/rcr-depois.png' },
+];
+
 const results = [
   {
     client: 'Rauan Pablo',
@@ -117,6 +122,40 @@ const Testimonials: React.FC = () => {
                   <p className="text-sm uppercase font-bold tracking-[0.15em] mb-6">{r.label}</p>
                   <div className="h-px w-full bg-[#DEDACF]/10 mb-4" />
                   <p className="text-sm font-light text-[#DEDACF]/50 leading-relaxed">{r.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Antes x Depois */}
+        <div className="mt-20 md:mt-28">
+          <p className="text-[10px] uppercase font-black text-[#000000]/30 mb-8 tracking-[0.5em]">Antes x Depois da P7</p>
+          <div className="flex flex-col gap-3">
+            {beforeAfter.map((c) => (
+              <div key={c.client} className="bg-[#000000] p-6 md:p-10">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="text-[10px] uppercase font-black tracking-[0.4em] text-[#DEDACF]/60">{c.client}</span>
+                  <span className="w-1.5 h-1.5 bg-[#DEDACF]" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1.6fr] gap-4 md:gap-6 items-center">
+                  <figure className="group">
+                    <div className="bg-[#201F1B] p-2 overflow-hidden">
+                      <img src={c.before} alt={`${c.client} antes da P7`} loading="lazy" className="w-full h-auto opacity-70 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700" />
+                    </div>
+                    <figcaption className="mt-3 text-[10px] uppercase font-bold tracking-[0.4em] text-[#7A756F]">Antes</figcaption>
+                  </figure>
+                  <div className="flex md:flex-col items-center justify-center gap-2 text-[#DEDACF]">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="rotate-90 md:rotate-0">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </div>
+                  <figure className="group">
+                    <div className="bg-[#201F1B] p-2 overflow-hidden ring-1 ring-[#DEDACF]/20">
+                      <img src={c.after} alt={`${c.client} depois da P7`} loading="lazy" className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-700" />
+                    </div>
+                    <figcaption className="mt-3 text-[10px] uppercase font-bold tracking-[0.4em] text-[#DEDACF]">Depois</figcaption>
+                  </figure>
                 </div>
               </div>
             ))}
