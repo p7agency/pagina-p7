@@ -119,6 +119,12 @@ export const CLIENTS = [
     name: 'Aura Fitness',
     role: 'Marca de roupa fitness referência em Guaçuí.',
     link: 'https://www.instagram.com/aurafitnessguacui/'
+  },
+  {
+    id: '15',
+    name: 'Valle Odontologia',
+    role: 'Clínica odontológica em Caratinga (MG).',
+    link: 'https://www.instagram.com/valleodonto/'
   }
 ];
 
