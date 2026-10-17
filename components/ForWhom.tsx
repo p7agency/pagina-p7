@@ -25,15 +25,15 @@ const ForWhom: React.FC = () => {
       style={{ fontFamily: "'Urbanist', sans-serif" }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-24 md:mb-32 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-24 gap-8">
           <div>
             <p className="text-[10px] uppercase tracking-[0.5em] font-black text-[#7A756F] mb-4">Conceito</p>
-            <h2 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.85] tracking-tighter">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter">
               Como<br />Fazemos
             </h2>
             <div className="h-[3px] w-20 bg-[#201F1B] mt-6" />
           </div>
-          <p className="max-w-xs text-sm text-[#7A756F] leading-relaxed font-medium hidden md:block">
+          <p className="max-w-sm text-base md:text-lg text-[#7A756F] leading-relaxed font-medium hidden md:block">
             Três pilares que sustentam cada projeto da P7.
           </p>
         </div>

@@ -113,6 +113,12 @@ export const CLIENTS = [
     name: 'Dra. Letícia Luz',
     role: 'Médica referência, especialista em emagrecimento com saúde, equilíbrio e cuidado.',
     link: 'https://www.instagram.com/draleticia.luz/'
+  },
+  {
+    id: '14',
+    name: 'Aura Fitness',
+    role: 'Marca de roupa fitness referência em Guaçuí.',
+    link: 'https://www.instagram.com/aurafitnessguacui/'
   }
 ];
 
