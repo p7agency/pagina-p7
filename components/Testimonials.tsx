@@ -1,5 +1,88 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+// Para adicionar um vídeo: copie o ID do Shorts (o código depois de /shorts/) e acrescente aqui.
+const videos = [
+  {
+    id: '1d0OnqjaGBg',
+    name: 'Gustavo Staniscia',
+    role: 'Fundador da Escola Beach Tennis e autor do livro 13 Golpes.',
+  },
+];
+
+const VideoCarousel: React.FC = () => {
+  const track = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused || videos.length < 2) return;
+    const id = setInterval(() => {
+      const el = track.current;
+      if (!el) return;
+      const card = el.firstElementChild as HTMLElement | null;
+      const step = card ? card.offsetWidth + 12 : 300;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+      el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + step, behavior: 'smooth' });
+    }, 3500);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  const scrollBy = (dir: number) => {
+    const el = track.current;
+    if (!el) return;
+    const card = el.firstElementChild as HTMLElement | null;
+    el.scrollBy({ left: dir * (card ? card.offsetWidth + 12 : 300), behavior: 'smooth' });
+  };
+
+  return (
+    <div className="mb-16 md:mb-20" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onTouchStart={() => setPaused(true)}>
+      <div className="flex items-center justify-between mb-6">
+        <p className="text-[10px] uppercase font-black text-[#000000]/30 tracking-[0.5em]">Vídeos</p>
+        {videos.length > 1 && (
+          <div className="flex gap-2">
+            {[-1, 1].map((d) => (
+              <button
+                key={d}
+                id={d < 0 ? 'videos-prev' : 'videos-next'}
+                onClick={() => scrollBy(d)}
+                aria-label={d < 0 ? 'Anterior' : 'Próximo'}
+                className="w-10 h-10 border border-[#000000]/20 flex items-center justify-center hover:bg-[#000000] hover:text-[#DEDACF] transition-colors"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={d < 0 ? 'rotate-180' : ''}>
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      <div
+        ref={track}
+        className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2"
+        style={{ scrollbarWidth: 'none' }}
+      >
+        {videos.map((v) => (
+          <figure key={v.id} className="snap-start shrink-0 w-[70vw] sm:w-[260px] md:w-[280px]">
+            <div className="relative bg-[#000000] overflow-hidden" style={{ aspectRatio: '9 / 16' }}>
+              <iframe
+                src={`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1`}
+                title={`Depoimento ${v.name}`}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+            <figcaption className="mt-3">
+              <span className="block text-xs font-extrabold uppercase tracking-tight">{v.name}</span>
+              <span className="block text-[11px] text-[#7A756F] leading-snug mt-1">{v.role}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const beforeAfter = [
   { client: 'Rauan Pablo', before: '/cases/rauan-antes.jpg', after: '/cases/rauan-depois.png' },
   { client: 'Rolê com Rapha', before: '/cases/rcr-antes.png', after: '/cases/rcr-depois.png' },
@@ -81,6 +164,7 @@ const Testimonials: React.FC = () => {
             <div className="h-[3px] w-20 bg-[#000000] mt-6" />
           </div>
         </div>
+        <VideoCarousel />
         <div className="flex flex-col gap-3">
           {testimonials.map((t, index) => (
             <div
