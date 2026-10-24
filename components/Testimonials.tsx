@@ -9,6 +9,65 @@ const videos = [
   },
 ];
 
+const VideoCard: React.FC<{ v: typeof videos[number]; index: number }> = ({ v, index }) => {
+  const [playing, setPlaying] = useState(false);
+  return (
+    <figure className="snap-center shrink-0 w-[72vw] sm:w-[280px] md:w-[300px] group">
+      <div
+        className="relative overflow-hidden rounded-[20px] bg-[#201F1B] ring-1 ring-[#DEDACF]/10 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.8)]"
+        style={{ aspectRatio: '9 / 16' }}
+      >
+        {playing ? (
+          <iframe
+            src={`https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+            title={`Depoimento ${v.name}`}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
+          />
+        ) : (
+          <button
+            id={`video-play-${v.id}`}
+            onClick={() => setPlaying(true)}
+            aria-label={`Assistir depoimento de ${v.name}`}
+            className="absolute inset-0 w-full h-full text-left"
+          >
+            <img
+              src={`https://i.ytimg.com/vi/${v.id}/oardefault.jpg`}
+              onError={(e) => ((e.target as HTMLImageElement).src = `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`)}
+              alt=""
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover grayscale-[40%] scale-[1.02] group-hover:grayscale-0 group-hover:scale-[1.06] transition-all duration-[1200ms] ease-out"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/85 via-[#000000]/10 to-[#000000]/30" />
+            <span className="absolute top-5 left-5 text-[10px] tracking-[0.4em] font-semibold text-[#DEDACF]/70">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <span className="absolute inset-0 flex items-center justify-center">
+              <span className="relative w-16 h-16 rounded-full border border-[#DEDACF]/50 backdrop-blur-md bg-[#DEDACF]/10 flex items-center justify-center transition-all duration-700 group-hover:scale-110 group-hover:bg-[#DEDACF]">
+                <span className="absolute inset-0 rounded-full border border-[#DEDACF]/30" style={{ animation: 'vRing 2.8s ease-out infinite' }} />
+                <svg width="14" height="16" viewBox="0 0 14 16" className="ml-1 fill-[#DEDACF] group-hover:fill-[#000000] transition-colors duration-500">
+                  <path d="M0 0l14 8-14 8z" />
+                </svg>
+              </span>
+            </span>
+            <span className="absolute bottom-5 left-5 right-5 text-[10px] uppercase tracking-[0.35em] text-[#DEDACF]/60">
+              Assistir
+            </span>
+          </button>
+        )}
+      </div>
+      <figcaption className="mt-5 pl-1">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="h-px w-6 bg-[#DEDACF]/40" />
+          <span className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#DEDACF]">{v.name}</span>
+        </div>
+        <p className="text-[11px] leading-relaxed text-[#7A756F] max-w-[260px]">{v.role}</p>
+      </figcaption>
+    </figure>
+  );
+};
+
 const VideoCarousel: React.FC = () => {
   const track = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
@@ -19,66 +78,67 @@ const VideoCarousel: React.FC = () => {
       const el = track.current;
       if (!el) return;
       const card = el.firstElementChild as HTMLElement | null;
-      const step = card ? card.offsetWidth + 12 : 300;
+      const step = card ? card.offsetWidth + 24 : 320;
       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
       el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + step, behavior: 'smooth' });
-    }, 3500);
+    }, 4500);
     return () => clearInterval(id);
   }, [paused]);
 
   const scrollBy = (dir: number) => {
     const el = track.current;
-    if (!el) return;
-    const card = el.firstElementChild as HTMLElement | null;
-    el.scrollBy({ left: dir * (card ? card.offsetWidth + 12 : 300), behavior: 'smooth' });
+    const card = el?.firstElementChild as HTMLElement | null;
+    el?.scrollBy({ left: dir * (card ? card.offsetWidth + 24 : 320), behavior: 'smooth' });
   };
 
   return (
-    <div className="mb-16 md:mb-20" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onTouchStart={() => setPaused(true)}>
-      <div className="flex items-center justify-between mb-6">
-        <p className="text-[10px] uppercase font-black text-[#000000]/30 tracking-[0.5em]">Vídeos</p>
-        {videos.length > 1 && (
-          <div className="flex gap-2">
-            {[-1, 1].map((d) => (
-              <button
-                key={d}
-                id={d < 0 ? 'videos-prev' : 'videos-next'}
-                onClick={() => scrollBy(d)}
-                aria-label={d < 0 ? 'Anterior' : 'Próximo'}
-                className="w-10 h-10 border border-[#000000]/20 flex items-center justify-center hover:bg-[#000000] hover:text-[#DEDACF] transition-colors"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={d < 0 ? 'rotate-180' : ''}>
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </button>
+    <div
+      className="relative mb-16 md:mb-24 bg-[#000000] text-[#DEDACF] overflow-hidden rounded-[28px]"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onTouchStart={() => setPaused(true)}
+    >
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(700px circle at 85% 20%, rgba(222,218,207,0.07), transparent 60%)' }} />
+      <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 p-8 md:p-14 lg:p-16 items-center">
+        <div className="lg:col-span-5">
+          <p className="text-[10px] uppercase tracking-[0.5em] text-[#7A756F] mb-6">Em vídeo</p>
+          <h3 className="text-3xl md:text-5xl font-light leading-[1.05] tracking-tight">
+            Quem viveu,
+            <br />
+            <span className="font-extrabold">conta.</span>
+          </h3>
+          <div className="h-px w-16 bg-[#DEDACF]/30 my-8" />
+          {videos.length > 1 && (
+            <div className="flex gap-3">
+              {[-1, 1].map((d) => (
+                <button
+                  key={d}
+                  id={d < 0 ? 'videos-prev' : 'videos-next'}
+                  onClick={() => scrollBy(d)}
+                  aria-label={d < 0 ? 'Anterior' : 'Próximo'}
+                  className="w-12 h-12 rounded-full border border-[#DEDACF]/20 flex items-center justify-center hover:bg-[#DEDACF] hover:text-[#000000] transition-colors duration-500"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={d < 0 ? 'rotate-180' : ''}>
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="lg:col-span-7">
+          <div
+            ref={track}
+            className={`flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2 ${videos.length === 1 ? 'justify-center lg:justify-end' : ''}`}
+            style={{ scrollbarWidth: 'none' }}
+          >
+            {videos.map((v, i) => (
+              <VideoCard key={v.id} v={v} index={i} />
             ))}
           </div>
-        )}
+        </div>
       </div>
-      <div
-        ref={track}
-        className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2"
-        style={{ scrollbarWidth: 'none' }}
-      >
-        {videos.map((v) => (
-          <figure key={v.id} className="snap-start shrink-0 w-[70vw] sm:w-[260px] md:w-[280px]">
-            <div className="relative bg-[#000000] overflow-hidden" style={{ aspectRatio: '9 / 16' }}>
-              <iframe
-                src={`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1`}
-                title={`Depoimento ${v.name}`}
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
-            </div>
-            <figcaption className="mt-3">
-              <span className="block text-xs font-extrabold uppercase tracking-tight">{v.name}</span>
-              <span className="block text-[11px] text-[#7A756F] leading-snug mt-1">{v.role}</span>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      <style>{`@keyframes vRing { 0% { transform: scale(1); opacity: .6 } 100% { transform: scale(1.7); opacity: 0 } }`}</style>
     </div>
   );
 };
