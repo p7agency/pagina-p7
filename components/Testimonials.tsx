@@ -203,18 +203,6 @@ const CountUp: React.FC<{ end: number }> = ({ end }) => {
   return <span ref={ref}>{n.toLocaleString('pt-BR')}</span>;
 };
 
-const testimonials = [
-  {
-    name: 'Martina Bugs',
-    role: 'Mentora de marcas, +30 anos no mercado do luxo',
-    text: 'O Pedro, da agência P7, é daqueles talentos raros. Quando nos encontramos on-line, a sintonia foi imediata. Ele captou com precisão o que eu buscava para minhas redes — meu modo de expressão, minha interação e a essência do que desejo transmitir ao meu público.',
-  },
-  {
-    name: 'Mariane Junqueira',
-    role: 'Mentora de marcas, ex-diretora Fendi por 13 anos',
-    text: 'Pedro, gostaria de dizer que estou muito feliz com o seu trabalho. Você soube captar a nossa história, nossos desejos e está transmitindo isso nas suas postagens de uma forma criativa e profissional.',
-  },
-];
 
 const Testimonials: React.FC = () => {
   return (
@@ -230,32 +218,8 @@ const Testimonials: React.FC = () => {
           </div>
         </div>
         <VideoCarousel />
-        <div className="flex flex-col gap-3">
-          {testimonials.map((t, index) => (
-            <div
-              key={index}
-              className="group grid grid-cols-1 lg:grid-cols-12 py-10 md:py-12 px-8 md:px-12 gap-8 transition-colors duration-500 bg-[#FFFFFF] hover:bg-[#F3F1EC]"
-            >
-              <div className="lg:col-span-1 flex items-start">
-                <span className="text-sm font-mono text-[#000000]/20 mt-1">0{index + 1}</span>
-              </div>
-              <div className="lg:col-span-8">
-                <blockquote className="text-base md:text-lg font-light leading-relaxed text-[#000000]/75 group-hover:text-[#000000] transition-colors">
-                  "{t.text}"
-                </blockquote>
-              </div>
-              <div className="lg:col-span-3 flex flex-col justify-end">
-                <h4 className="text-lg font-black uppercase tracking-tight mb-2">{t.name}</h4>
-                <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#000000]/40 leading-relaxed">
-                  {t.role}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Resultados */}
-        <div className="mt-20 md:mt-28">
+        <div>
           <p className="text-[10px] uppercase font-black text-[#000000]/30 mb-8 tracking-[0.5em]">Resultados · Sem tráfego pago</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {results.map((r) => (
@@ -278,7 +242,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* Antes x Depois */}
-        <div className="mt-20 md:mt-28">
+        <div>
           <p className="text-[10px] uppercase font-black text-[#000000]/30 mb-8 tracking-[0.5em]">Antes x Depois da P7</p>
           <div className="flex flex-col gap-3">
             {beforeAfter.map((c) => (
