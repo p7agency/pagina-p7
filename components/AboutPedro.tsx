@@ -12,11 +12,11 @@ const AboutPedro: React.FC = () => {
               Pedro<br />Poubel
             </h2>
             <div className="h-[3px] w-20 bg-[#000000] mt-6 mb-10" />
-            <div className="relative overflow-hidden flex-1 min-h-[420px]">
+            <div className="relative overflow-hidden">
               <img
                 src="/P7-1.JPG"
                 alt="Pedro Poubel, fundador da P7"
-                className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-1000 object-cover"
+                className="w-full grayscale hover:grayscale-0 transition-all duration-1000 object-cover aspect-[3/4]"
               />
               <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#DEDACF] to-transparent" />
             </div>
