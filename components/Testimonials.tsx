@@ -12,6 +12,11 @@ const videos = [
     name: 'Martina Bugs',
     role: 'Mentora de marcas, +30 anos no mercado do luxo.',
   },
+  {
+    id: 'WcE1RhD55Bc',
+    name: 'Rolê com Rapha',
+    role: 'Comunidade capixaba de entretenimento e conexão.',
+  },
 ];
 
 const VideoCard: React.FC<{ v: typeof videos[number]; index: number }> = ({ v, index }) => {
