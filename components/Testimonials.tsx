@@ -7,6 +7,11 @@ const videos = [
     name: 'Gustavo Staniscia',
     role: 'Fundador da Escola Beach Tennis e autor do livro 13 Golpes.',
   },
+  {
+    id: 'by3ytbWO3VE',
+    name: 'Martina Bugs',
+    role: 'Mentora de marcas, +30 anos no mercado do luxo.',
+  },
 ];
 
 const VideoCard: React.FC<{ v: typeof videos[number]; index: number }> = ({ v, index }) => {
