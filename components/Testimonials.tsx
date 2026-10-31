@@ -17,6 +17,16 @@ const videos = [
     name: 'Rolê com Rapha',
     role: 'Comunidade capixaba de entretenimento e conexão.',
   },
+  {
+    id: 'v_J0idBL_jo',
+    name: 'Yhan Xavier',
+    role: 'Personal trainer em Itaperuna. Participou da Mentoria P7 Club.',
+  },
+  {
+    id: 'asngId4xnKo',
+    name: 'Mariane Junqueira',
+    role: 'Mentora de marcas, ex-diretora Fendi por 13 anos.',
+  },
 ];
 
 const VideoCard: React.FC<{ v: typeof videos[number]; index: number }> = ({ v, index }) => {
