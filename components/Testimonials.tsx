@@ -97,7 +97,7 @@ const VideoCarousel: React.FC = () => {
     const id = setInterval(() => {
       const el = track.current;
       if (!el) return;
-      const card = el.firstElementChild as HTMLElement | null;
+      const card = el.firstElementChild?.firstElementChild as HTMLElement | null;
       const step = card ? card.offsetWidth + 24 : 320;
       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
       el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + step, behavior: 'smooth' });
@@ -107,7 +107,7 @@ const VideoCarousel: React.FC = () => {
 
   const scrollBy = (dir: number) => {
     const el = track.current;
-    const card = el?.firstElementChild as HTMLElement | null;
+    const card = el?.firstElementChild?.firstElementChild as HTMLElement | null;
     el?.scrollBy({ left: dir * (card ? card.offsetWidth + 24 : 320), behavior: 'smooth' });
   };
 
@@ -119,43 +119,38 @@ const VideoCarousel: React.FC = () => {
       onTouchStart={() => setPaused(true)}
     >
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(700px circle at 85% 20%, rgba(222,218,207,0.07), transparent 60%)' }} />
-      <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 p-8 md:p-14 lg:p-16 items-center">
-        <div className="lg:col-span-5">
-          <p className="text-[10px] uppercase tracking-[0.5em] text-[#7A756F] mb-6">Em vídeo</p>
+      <div className="relative pt-12 md:pt-16 pb-10 md:pb-14">
+        <div className="text-center px-6 mb-10 md:mb-14">
+          <p className="text-[10px] uppercase tracking-[0.5em] text-[#7A756F] mb-5">Em vídeo</p>
           <h3 className="text-3xl md:text-5xl font-light leading-[1.05] tracking-tight">
-            Quem viveu,
-            <br />
-            <span className="font-extrabold">conta.</span>
+            Quem viveu, <span className="font-extrabold">conta.</span>
           </h3>
-          <div className="h-px w-16 bg-[#DEDACF]/30 my-8" />
-          {videos.length > 1 && (
-            <div className="flex gap-3">
-              {[-1, 1].map((d) => (
-                <button
-                  key={d}
-                  id={d < 0 ? 'videos-prev' : 'videos-next'}
-                  onClick={() => scrollBy(d)}
-                  aria-label={d < 0 ? 'Anterior' : 'Próximo'}
-                  className="w-12 h-12 rounded-full border border-[#DEDACF]/20 flex items-center justify-center hover:bg-[#DEDACF] hover:text-[#000000] transition-colors duration-500"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={d < 0 ? 'rotate-180' : ''}>
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg>
-                </button>
+          <div className="h-px w-16 bg-[#DEDACF]/30 mx-auto mt-8" />
+        </div>
+
+        <div className="relative">
+          <div ref={track} className="overflow-x-auto snap-x snap-mandatory" style={{ scrollbarWidth: 'none' }}>
+            <div className="flex gap-4 md:gap-6 w-max mx-auto">
+              {videos.map((v, i) => (
+                <VideoCard key={v.id} v={v} index={i} />
               ))}
             </div>
-          )}
-        </div>
-        <div className="lg:col-span-7">
-          <div
-            ref={track}
-            className={`flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2 ${videos.length === 1 ? 'justify-center lg:justify-end' : ''}`}
-            style={{ scrollbarWidth: 'none' }}
-          >
-            {videos.map((v, i) => (
-              <VideoCard key={v.id} v={v} index={i} />
-            ))}
           </div>
+
+          {videos.length > 1 &&
+            [-1, 1].map((d) => (
+              <button
+                key={d}
+                id={d < 0 ? 'videos-prev' : 'videos-next'}
+                onClick={() => scrollBy(d)}
+                aria-label={d < 0 ? 'Anterior' : 'Próximo'}
+                className={`absolute top-[38%] -translate-y-1/2 ${d < 0 ? 'left-3 md:left-6' : 'right-3 md:right-6'} z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#000000]/60 backdrop-blur-md border border-[#DEDACF]/25 text-[#DEDACF] flex items-center justify-center hover:bg-[#DEDACF] hover:text-[#000000] transition-colors duration-500`}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={d < 0 ? 'rotate-180' : ''}>
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </button>
+            ))}
         </div>
       </div>
       <style>{`@keyframes vRing { 0% { transform: scale(1); opacity: .6 } 100% { transform: scale(1.7); opacity: 0 } }`}</style>
