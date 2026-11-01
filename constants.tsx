@@ -39,7 +39,7 @@ export const CLIENTS = [
   { 
     id: '01', 
     name: 'Martina Bugs', 
-    role: 'Mentora de marcas, com vivência de +30 anos no mercado do luxo. Liderou marcas globais como Louis Vuitton, Fendi e Burberry.',
+    role: 'Sócia da Entre Movimentos. Mentora de marcas, com vivência de +30 anos no mercado do luxo. Liderou marcas globais como Louis Vuitton, Fendi e Burberry.',
     link: 'https://www.instagram.com/martinabugs/'
   },
   { 
@@ -57,7 +57,7 @@ export const CLIENTS = [
   { 
     id: '04', 
     name: 'Mariane Junqueira', 
-    role: 'Mentora de marcas, com vivência de +30 anos no mercado do luxo. Líder em marcas globais, foi diretora da Fendi por 13 anos.',
+    role: 'Sócia da Entre Movimentos. Mentora de marcas, com vivência de +30 anos no mercado do luxo. Líder em marcas globais, foi diretora da Fendi por 13 anos.',
     link: 'https://www.instagram.com/marianejunqueira/'
   },
   { 

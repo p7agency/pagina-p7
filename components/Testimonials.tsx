@@ -10,7 +10,7 @@ const videos = [
   {
     id: 'by3ytbWO3VE',
     name: 'Martina Bugs',
-    role: 'Mentora de marcas, +30 anos no mercado do luxo.',
+    role: 'Sócia da Entre Movimentos. Mentora de marcas, +30 anos no mercado do luxo.',
   },
   {
     id: 'WcE1RhD55Bc',
@@ -25,11 +25,11 @@ const videos = [
   {
     id: 'asngId4xnKo',
     name: 'Mariane Junqueira',
-    role: 'Mentora de marcas, ex-diretora Fendi por 13 anos.',
+    role: 'Sócia da Entre Movimentos. Mentora de marcas, ex-diretora Fendi por 13 anos.',
   },
 ];
 
-const VideoCard: React.FC<{ v: typeof videos[number]; index: number }> = ({ v, index }) => {
+const VideoCard: React.FC<{ v: typeof videos[number]; index: number; onPlay: () => void }> = ({ v, index, onPlay }) => {
   const [playing, setPlaying] = useState(false);
   return (
     <figure className="snap-center shrink-0 w-[72vw] sm:w-[280px] md:w-[300px] group">
@@ -48,7 +48,7 @@ const VideoCard: React.FC<{ v: typeof videos[number]; index: number }> = ({ v, i
         ) : (
           <button
             id={`video-play-${v.id}`}
-            onClick={() => setPlaying(true)}
+            onClick={() => { setPlaying(true); onPlay(); }}
             aria-label={`Assistir depoimento de ${v.name}`}
             className="absolute inset-0 w-full h-full text-left"
           >
@@ -91,9 +91,10 @@ const VideoCard: React.FC<{ v: typeof videos[number]; index: number }> = ({ v, i
 const VideoCarousel: React.FC = () => {
   const track = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
+  const [watching, setWatching] = useState(false);
 
   useEffect(() => {
-    if (paused || videos.length < 2) return;
+    if (paused || watching || videos.length < 2) return;
     const id = setInterval(() => {
       const el = track.current;
       if (!el) return;
@@ -103,7 +104,7 @@ const VideoCarousel: React.FC = () => {
       el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + step, behavior: 'smooth' });
     }, 4500);
     return () => clearInterval(id);
-  }, [paused]);
+  }, [paused, watching]);
 
   const scrollBy = (dir: number) => {
     const el = track.current;
@@ -113,7 +114,8 @@ const VideoCarousel: React.FC = () => {
 
   return (
     <div
-      className="relative mb-16 md:mb-24 bg-[#000000] text-[#DEDACF] overflow-hidden rounded-[28px]"
+      id="videos"
+      className="scroll-mt-28 relative mb-16 md:mb-24 bg-[#000000] text-[#DEDACF] overflow-hidden rounded-[28px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={() => setPaused(true)}
@@ -132,7 +134,7 @@ const VideoCarousel: React.FC = () => {
           <div ref={track} className="overflow-x-auto snap-x snap-mandatory" style={{ scrollbarWidth: 'none' }}>
             <div className="flex gap-4 md:gap-6 w-max mx-auto">
               {videos.map((v, i) => (
-                <VideoCard key={v.id} v={v} index={i} />
+                <VideoCard key={v.id} v={v} index={i} onPlay={() => setWatching(true)} />
               ))}
             </div>
           </div>
